@@ -30,11 +30,12 @@ cloudinary.config({
 })
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
-app.use(express.static(path.resolve(__dirname, './client/dist')))
+app.use(express.static(path.resolve(__dirname, './public')))
 app.use(cookieParser())
 app.use(express.json())
 app.use(helmet())
