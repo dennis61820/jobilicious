@@ -1,31 +1,28 @@
-import { FormRow } from '../components'
+import { FormRow, FormRowSelect } from '../components'
 import Wrapper from '../assets/wrappers/DashboardFormPage'
 import { useOutletContext } from 'react-router-dom'
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants'
-import { Form, useNavigation, redirect } from 'react-router-dom'
+import { Form, redirect } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import customFetch from '../utils/customFetch'
-import FormRowSelect from '../components/FormRowSelect'
+import SubmitBtn from '../components/SubmitBtn'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
-  const { data } = Object.fromEnties(formData)
-
+  const data = Object.fromEnties(formData)
+  console.log(data)
   try {
     await customFetch.post('/jobs', data)
     toast.success('Job added')
-    return redirect('/all-jobs')
+    return redirect('all-jobs')
   } catch (error) {
-    toast.error(error?.respnse?.data?.msg)
+    toast.error(error?.response?.data?.msg)
     return error
   }
 }
 
 const AddJob = () => {
   const { user } = useOutletContext()
-
-  const navigation = useNavigation()
-  const isSubmitting = navigation.state === 'submitting'
 
   return (
     <Wrapper>
@@ -36,8 +33,8 @@ const AddJob = () => {
           <FormRow type='text' name='company' />
           <FormRow
             type='text'
-            name='jobLocation'
             labelText='job location'
+            name='jobLocation'
             defaultValue={user.location}
           />
           <FormRowSelect
@@ -52,13 +49,7 @@ const AddJob = () => {
             defaultValue={JOB_TYPE.FULL_TIME}
             list={Object.values(JOB_TYPE)}
           />
-          <button
-            type='submit'
-            className='btn btn-block form-btn'
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'submitting...' : 'submit'}
-          </button>
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
