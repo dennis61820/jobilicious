@@ -1,16 +1,16 @@
-import { FormRow, FormRowSelect } from '../components'
+import { FormRow, FormRowSelect, SubmitBtn } from '../components'
 import Wrapper from '../assets/wrappers/DashboardFormPage'
 import { useOutletContext } from 'react-router-dom'
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants'
 import { Form, redirect } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import customFetch from '../utils/customFetch'
-import SubmitBtn from '../components/SubmitBtn'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
-  const data = Object.fromEnties(formData)
-  console.log(data)
+
+  const data = Object.fromEntries(formData)
+
   try {
     await customFetch.post('/jobs', data)
     toast.success('Job added')

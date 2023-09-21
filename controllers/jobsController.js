@@ -5,7 +5,7 @@ import checkPermissions from '../utils/checkPermissions.js'
 import mongoose from 'mongoose'
 
 export const getAllJobs = async (req, res) => {
-  const jobs = await Job.find({})
+  const jobs = await Job.find({ createdBy: req.user.userId })
   res.status(StatusCodes.OK).json({ jobs })
 }
 
