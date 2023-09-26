@@ -32,9 +32,9 @@ npm run dev
 
 ```jsx
 const App = () => {
-  return <h1>Jobify App</h1>;
-};
-export default App;
+  return <h1>Jobify App</h1>
+}
+export default App
 ```
 
 #### Project Assets
@@ -102,7 +102,7 @@ npm i react-router-dom@6.10.0
 App.jsx
 
 ```jsx
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -117,12 +117,12 @@ const router = createBrowserRouter([
       </div>
     ),
   },
-]);
+])
 
 const App = () => {
-  return <RouterProvider router={router} />;
-};
-export default App;
+  return <RouterProvider router={router} />
+}
+export default App
 ```
 
 #### Create Pages
@@ -146,9 +146,9 @@ export default App;
 
 ```jsx
 const AddJob = () => {
-  return <h1>AddJob</h1>;
-};
-export default AddJob;
+  return <h1>AddJob</h1>
+}
+export default AddJob
 ```
 
 #### Index
@@ -156,24 +156,24 @@ export default AddJob;
 App.jsx
 
 ```jsx
-import HomeLayout from '../ pages/HomeLayout';
+import HomeLayout from '../ pages/HomeLayout'
 ```
 
 pages/index.js
 
 ```js
-export { default as DashboardLayout } from './DashboardLayout';
-export { default as Landing } from './Landing';
-export { default as HomeLayout } from './HomeLayout';
-export { default as Register } from './Register';
-export { default as Login } from './Login';
-export { default as Error } from './Error';
-export { default as Stats } from './Stats';
-export { default as AllJobs } from './AllJobs';
-export { default as AddJob } from './AddJob';
-export { default as EditJob } from './EditJob';
-export { default as Profile } from './Profile';
-export { default as Admin } from './Admin';
+export { default as DashboardLayout } from './DashboardLayout'
+export { default as Landing } from './Landing'
+export { default as HomeLayout } from './HomeLayout'
+export { default as Register } from './Register'
+export { default as Login } from './Login'
+export { default as Error } from './Error'
+export { default as Stats } from './Stats'
+export { default as AllJobs } from './AllJobs'
+export { default as AddJob } from './AddJob'
+export { default as EditJob } from './EditJob'
+export { default as Profile } from './Profile'
+export { default as Admin } from './Admin'
 ```
 
 App.jsx
@@ -186,7 +186,7 @@ import {
   Login,
   DashboardLayout,
   Error,
-} from './pages';
+} from './pages'
 
 const router = createBrowserRouter([
   {
@@ -205,7 +205,7 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <DashboardLayout />,
   },
-]);
+])
 ```
 
 #### Link Component
@@ -216,7 +216,7 @@ const router = createBrowserRouter([
 Register.jsx
 
 ```jsx
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -224,15 +224,15 @@ const Register = () => {
       <h1>Register</h1>
       <Link to='/login'>Login Page</Link>
     </div>
-  );
-};
-export default Register;
+  )
+}
+export default Register
 ```
 
 Login.jsx
 
 ```jsx
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -240,9 +240,9 @@ const Login = () => {
       <h1>Login</h1>
       <Link to='/register'>Register Page</Link>
     </div>
-  );
-};
-export default Login;
+  )
+}
+export default Login
 ```
 
 #### Nested Routes
@@ -274,13 +274,13 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 ```
 
 HomeLayout.jsx
 
 ```jsx
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
 const HomeLayout = () => {
   return (
@@ -289,9 +289,9 @@ const HomeLayout = () => {
       {/* <h1>home layout</h1> */}
       <Outlet />
     </>
-  );
-};
-export default HomeLayout;
+  )
+}
+export default HomeLayout
 ```
 
 #### Index (Home) Page
@@ -330,19 +330,19 @@ App.jsx
 Error.jsx
 
 ```jsx
-import { Link, useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom'
 
 const Error = () => {
-  const error = useRouteError();
-  console.log(error);
+  const error = useRouteError()
+  console.log(error)
   return (
     <div>
       <h1>Error Page !!!</h1>
       <Link to='/dashboard'>back home</Link>
     </div>
-  );
-};
-export default Error;
+  )
+}
+export default Error
 ```
 
 #### Styled Components
@@ -360,11 +360,11 @@ npm install styled-components@5.3.10
 ```
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const El = styled.el`
   // styles go here
-`;
+`
 ```
 
 - no name collisions, since unique class
@@ -374,7 +374,7 @@ const El = styled.el`
 Landing.jsx
 
 ```jsx
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Landing = () => {
   return (
@@ -382,28 +382,28 @@ const Landing = () => {
       <h1>Landing</h1>
       <StyledButton>Click Me</StyledButton>
     </div>
-  );
-};
+  )
+}
 
 const StyledButton = styled.button`
   background-color: red;
   color: white;
-`;
-export default Landing;
+`
+export default Landing
 ```
 
 #### Style Entire React Component
 
 ```js
-const Wrapper = styled.el``;
+const Wrapper = styled.el``
 
 const Component = () => {
   return (
     <Wrapper>
       <h1> Component</h1>
     </Wrapper>
-  );
-};
+  )
+}
 ```
 
 - only responsible for styling
@@ -412,7 +412,7 @@ const Component = () => {
 Landing.jsx
 
 ```jsx
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Landing = () => {
   return (
@@ -420,8 +420,8 @@ const Landing = () => {
       <h1>Landing</h1>
       <div className='content'>some content</div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   background-color: red;
@@ -432,17 +432,17 @@ const Wrapper = styled.div`
     background-color: blue;
     color: yellow;
   }
-`;
-export default Landing;
+`
+export default Landing
 ```
 
 #### Landing Page
 
 ```jsx
-import main from '../assets/images/main.svg';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.svg';
-import styled from 'styled-components';
+import main from '../assets/images/main.svg'
+import { Link } from 'react-router-dom'
+import logo from '../assets/images/logo.svg'
+import styled from 'styled-components'
 const Landing = () => {
   return (
     <StyledWrapper>
@@ -471,8 +471,8 @@ const Landing = () => {
         <img src={main} alt='job hunt' className='img main-img' />
       </div>
     </StyledWrapper>
-  );
-};
+  )
+}
 
 const StyledWrapper = styled.section`
   nav {
@@ -520,9 +520,9 @@ const StyledWrapper = styled.section`
       display: block;
     }
   }
-`;
+`
 
-export default Landing;
+export default Landing
 ```
 
 #### Assets/Wrappers
@@ -532,7 +532,7 @@ export default Landing;
   Landing.jsx
 
 ```jsx
-import Wrapper from '../assets/wrappers/LandingPage';
+import Wrapper from '../assets/wrappers/LandingPage'
 ```
 
 #### Logo Component
@@ -545,13 +545,13 @@ import Wrapper from '../assets/wrappers/LandingPage';
   Logo.jsx
 
 ```jsx
-import logo from '../assets/images/logo.svg';
+import logo from '../assets/images/logo.svg'
 
 const Logo = () => {
-  return <img src={logo} alt='jobify' className='logo' />;
-};
+  return <img src={logo} alt='jobify' className='logo' />
+}
 
-export default Logo;
+export default Logo
 ```
 
 #### Logo and Images
@@ -564,13 +564,13 @@ export default Logo;
 Error.jsx
 
 ```jsx
-import { Link, useRouteError } from 'react-router-dom';
-import img from '../assets/images/not-found.svg';
-import Wrapper from '../assets/wrappers/ErrorPage';
+import { Link, useRouteError } from 'react-router-dom'
+import img from '../assets/images/not-found.svg'
+import Wrapper from '../assets/wrappers/ErrorPage'
 
 const Error = () => {
-  const error = useRouteError();
-  console.log(error);
+  const error = useRouteError()
+  console.log(error)
   if (error.status === 404) {
     return (
       <Wrapper>
@@ -581,7 +581,7 @@ const Error = () => {
           <Link to='/dashboard'>back home</Link>
         </div>
       </Wrapper>
-    );
+    )
   }
   return (
     <Wrapper>
@@ -589,10 +589,10 @@ const Error = () => {
         <h3>something went wrong</h3>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Error;
+export default Error
 ```
 
 #### Error Page CSS (optional)
@@ -600,7 +600,7 @@ export default Error;
 assets/wrappers/Error.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.main`
   min-height: 100vh;
@@ -628,9 +628,9 @@ const Wrapper = styled.main`
     color: var(--primary-500);
     text-transform: capitalize;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### Register Page
@@ -638,9 +638,9 @@ export default Wrapper;
 Register.jsx
 
 ```jsx
-import { Logo } from '../components';
-import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
-import { Link } from 'react-router-dom';
+import { Logo } from '../components'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -673,9 +673,9 @@ const Register = () => {
         </p>
       </form>
     </Wrapper>
-  );
-};
-export default Register;
+  )
+}
+export default Register
 ```
 
 - required attribute
@@ -708,18 +708,18 @@ const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
         required
       />
     </div>
-  );
-};
+  )
+}
 
-export default FormRow;
+export default FormRow
 ```
 
 Register.jsx
 
 ```jsx
-import { Logo, FormRow } from '../components';
-import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
-import { Link } from 'react-router-dom';
+import { Logo, FormRow } from '../components'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -745,9 +745,9 @@ const Register = () => {
         </p>
       </form>
     </Wrapper>
-  );
-};
-export default Register;
+  )
+}
+export default Register
 ```
 
 #### Login Page
@@ -755,10 +755,10 @@ export default Register;
 Login Page
 
 ```jsx
-import { Logo, FormRow } from '../components';
-import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
+import { Logo, FormRow } from '../components'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
 
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -782,9 +782,9 @@ const Login = () => {
         </p>
       </form>
     </Wrapper>
-  );
-};
-export default Login;
+  )
+}
+export default Login
 ```
 
 #### Register and Login CSS (optional)
@@ -792,7 +792,7 @@ export default Login;
 assets/wrappers/RegisterAndLoginPage.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -825,8 +825,8 @@ const Wrapper = styled.section`
     letter-spacing: var(--letter-spacing);
     margin-left: 0.25rem;
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Dashboard Pages
@@ -863,16 +863,16 @@ App.jsx
 Dashboard.jsx
 
 ```jsx
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
 const DashboardLayout = () => {
   return (
     <div>
       <Outlet />
     </div>
-  );
-};
-export default DashboardLayout;
+  )
+}
+export default DashboardLayout
 ```
 
 #### Navbar, BigSidebar and SmallSidebar
@@ -885,10 +885,10 @@ export default DashboardLayout;
 DashboardLayout.jsx
 
 ```jsx
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
-import Wrapper from '../assets/wrappers/Dashboard';
-import { Navbar, BigSidebar, SmallSidebar } from '../components';
+import Wrapper from '../assets/wrappers/Dashboard'
+import { Navbar, BigSidebar, SmallSidebar } from '../components'
 
 const Dashboard = () => {
   return (
@@ -904,10 +904,10 @@ const Dashboard = () => {
         </div>
       </main>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
 ```
 
 #### Dashboard Layout - CSS (optional)
@@ -915,7 +915,7 @@ export default Dashboard;
 assets/wrappers/DashboardLayout.jsx
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   .dashboard {
@@ -935,38 +935,38 @@ const Wrapper = styled.section`
       width: 90%;
     }
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Dashboard Context
 
 ```jsx
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
-import Wrapper from '../assets/wrappers/Dashboard';
-import { Navbar, BigSidebar, SmallSidebar } from '../components';
+import Wrapper from '../assets/wrappers/Dashboard'
+import { Navbar, BigSidebar, SmallSidebar } from '../components'
 
-import { useState, createContext, useContext } from 'react';
-const DashboardContext = createContext();
+import { useState, createContext, useContext } from 'react'
+const DashboardContext = createContext()
 const Dashboard = () => {
   // temp
-  const user = { name: 'john' };
+  const user = { name: 'john' }
 
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false)
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   const toggleDarkTheme = () => {
-    console.log('toggle dark theme');
-  };
+    console.log('toggle dark theme')
+  }
 
   const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
+    setShowSidebar(!showSidebar)
+  }
 
   const logoutUser = async () => {
-    console.log('logout user');
-  };
+    console.log('logout user')
+  }
   return (
     <DashboardContext.Provider
       value={{
@@ -991,12 +991,12 @@ const Dashboard = () => {
         </main>
       </Wrapper>
     </DashboardContext.Provider>
-  );
-};
+  )
+}
 
-export const useDashboardContext = () => useContext(DashboardContext);
+export const useDashboardContext = () => useContext(DashboardContext)
 
-export default Dashboard;
+export default Dashboard
 ```
 
 #### React Icons
@@ -1026,13 +1026,13 @@ const Navbar = () => {
 #### Navbar - Initial Setup
 
 ```jsx
-import Wrapper from '../assets/wrappers/Navbar';
-import { FaAlignLeft } from 'react-icons/fa';
-import Logo from './Logo';
+import Wrapper from '../assets/wrappers/Navbar'
+import { FaAlignLeft } from 'react-icons/fa'
+import Logo from './Logo'
 
-import { useDashboardContext } from '../pages/DashboardLayout';
+import { useDashboardContext } from '../pages/DashboardLayout'
 const Navbar = () => {
-  const { toggleSidebar } = useDashboardContext();
+  const { toggleSidebar } = useDashboardContext()
   return (
     <Wrapper>
       <div className='nav-center'>
@@ -1046,10 +1046,10 @@ const Navbar = () => {
         <div className='btn-container'>toggle/logout</div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
 ```
 
 #### Navbar CSS (optional)
@@ -1057,7 +1057,7 @@ export default Navbar;
 assets/wrappers/Navbar.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.nav`
   height: var(--nav-height);
@@ -1108,8 +1108,8 @@ const Wrapper = styled.nav`
       display: block;
     }
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Links
@@ -1117,13 +1117,13 @@ export default Wrapper;
 - create src/utils/links.jsx
 
 ```jsx
-import React from 'react';
+import React from 'react'
 
-import { IoBarChartSharp } from 'react-icons/io5';
-import { MdQueryStats } from 'react-icons/md';
-import { FaWpforms } from 'react-icons/fa';
-import { ImProfile } from 'react-icons/im';
-import { MdAdminPanelSettings } from 'react-icons/md';
+import { IoBarChartSharp } from 'react-icons/io5'
+import { MdQueryStats } from 'react-icons/md'
+import { FaWpforms } from 'react-icons/fa'
+import { ImProfile } from 'react-icons/im'
+import { MdAdminPanelSettings } from 'react-icons/md'
 
 const links = [
   { text: 'add job', path: '.', icon: <FaWpforms /> },
@@ -1131,9 +1131,9 @@ const links = [
   { text: 'stats', path: 'stats', icon: <IoBarChartSharp /> },
   { text: 'profile', path: 'profile', icon: <ImProfile /> },
   { text: 'admin', path: 'admin', icon: <MdAdminPanelSettings /> },
-];
+]
 
-export default links;
+export default links
 ```
 
 - in a second, we will discuss why '.' in "add job"
@@ -1143,16 +1143,16 @@ export default links;
 SmallSidebar
 
 ```jsx
-import Wrapper from '../assets/wrappers/SmallSidebar';
-import { FaTimes } from 'react-icons/fa';
+import Wrapper from '../assets/wrappers/SmallSidebar'
+import { FaTimes } from 'react-icons/fa'
 
-import Logo from './Logo';
-import { NavLink } from 'react-router-dom';
-import links from '../utils/links';
-import { useDashboardContext } from '../pages/DashboardLayout';
+import Logo from './Logo'
+import { NavLink } from 'react-router-dom'
+import links from '../utils/links'
+import { useDashboardContext } from '../pages/DashboardLayout'
 
 const SmallSidebar = () => {
-  const { showSidebar, toggleSidebar } = useDashboardContext();
+  const { showSidebar, toggleSidebar } = useDashboardContext()
   return (
     <Wrapper>
       <div
@@ -1169,7 +1169,7 @@ const SmallSidebar = () => {
           </header>
           <div className='nav-links'>
             {links.map((link) => {
-              const { text, path, icon } = link;
+              const { text, path, icon } = link
 
               return (
                 <NavLink
@@ -1183,16 +1183,16 @@ const SmallSidebar = () => {
                   <span className='icon'>{icon}</span>
                   {text}
                 </NavLink>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default SmallSidebar;
+export default SmallSidebar
 ```
 
 - cover '.' path ,active class and 'end' prop
@@ -1202,7 +1202,7 @@ export default SmallSidebar;
 assets/wrappers/SmallSidebar.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.aside`
   @media (min-width: 992px) {
@@ -1272,8 +1272,8 @@ const Wrapper = styled.aside`
   .active {
     color: var(--primary-500);
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### NavLinks
@@ -1281,17 +1281,17 @@ export default Wrapper;
 - components/NavLinks.jsx
 
 ```jsx
-import { useDashboardContext } from '../pages/DashboardLayout';
-import links from '../utils/links';
-import { NavLink } from 'react-router-dom';
+import { useDashboardContext } from '../pages/DashboardLayout'
+import links from '../utils/links'
+import { NavLink } from 'react-router-dom'
 
 const NavLinks = () => {
-  const { user, toggleSidebar } = useDashboardContext();
+  const { user, toggleSidebar } = useDashboardContext()
 
   return (
     <div className='nav-links'>
       {links.map((link) => {
-        const { text, path, icon } = link;
+        const { text, path, icon } = link
         // admin user
         return (
           <NavLink
@@ -1304,25 +1304,25 @@ const NavLinks = () => {
             <span className='icon'>{icon}</span>
             {text}
           </NavLink>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default NavLinks;
+export default NavLinks
 ```
 
 #### Big Sidebar
 
 ```jsx
-import NavLinks from './NavLinks';
-import Logo from '../components/Logo';
-import Wrapper from '../assets/wrappers/BigSidebar';
-import { useDashboardContext } from '../pages/DashboardLayout';
+import NavLinks from './NavLinks'
+import Logo from '../components/Logo'
+import Wrapper from '../assets/wrappers/BigSidebar'
+import { useDashboardContext } from '../pages/DashboardLayout'
 
 const BigSidebar = () => {
-  const { showSidebar } = useDashboardContext();
+  const { showSidebar } = useDashboardContext()
   return (
     <Wrapper>
       <div
@@ -1338,20 +1338,20 @@ const BigSidebar = () => {
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default BigSidebar;
+export default BigSidebar
 ```
 
 ```jsx
 const NavLinks = ({ isBigSidebar }) => {
-  const { user, toggleSidebar } = useDashboardContext();
+  const { user, toggleSidebar } = useDashboardContext()
 
   return (
     <div className='nav-links'>
       {links.map((link) => {
-        const { text, path, icon } = link;
+        const { text, path, icon } = link
         // admin user
         return (
           <NavLink
@@ -1364,13 +1364,13 @@ const NavLinks = ({ isBigSidebar }) => {
             <span className='icon'>{icon}</span>
             {text}
           </NavLink>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default NavLinks;
+export default NavLinks
 ```
 
 #### BigSidebar CSS (optional)
@@ -1378,7 +1378,7 @@ export default NavLinks;
 assets/wrappers/BigSidebar.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.aside`
   display: none;
@@ -1436,8 +1436,8 @@ const Wrapper = styled.aside`
       color: var(--primary-500);
     }
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### LogoutContainer
@@ -1445,14 +1445,14 @@ export default Wrapper;
 components/LogoutContainer.jsx
 
 ```jsx
-import { FaUserCircle, FaCaretDown } from 'react-icons/fa';
-import Wrapper from '../assets/wrappers/LogoutContainer';
-import { useState } from 'react';
-import { useDashboardContext } from '../pages/DashboardLayout';
+import { FaUserCircle, FaCaretDown } from 'react-icons/fa'
+import Wrapper from '../assets/wrappers/LogoutContainer'
+import { useState } from 'react'
+import { useDashboardContext } from '../pages/DashboardLayout'
 
 const LogoutContainer = () => {
-  const [showLogout, setShowLogout] = useState(false);
-  const { user, logoutUser } = useDashboardContext();
+  const [showLogout, setShowLogout] = useState(false)
+  const { user, logoutUser } = useDashboardContext()
 
   return (
     <Wrapper>
@@ -1476,9 +1476,9 @@ const LogoutContainer = () => {
         </button>
       </div>
     </Wrapper>
-  );
-};
-export default LogoutContainer;
+  )
+}
+export default LogoutContainer
 ```
 
 #### LogoutContainer CSS (optional)
@@ -1486,7 +1486,7 @@ export default LogoutContainer;
 assets/wrappers/LogoutContainer.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   position: relative;
@@ -1528,9 +1528,9 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### ThemeToggle
@@ -1538,12 +1538,12 @@ export default Wrapper;
 components/ThemeToggle.jsx
 
 ```jsx
-import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-import Wrapper from '../assets/wrappers/ThemeToggle';
-import { useDashboardContext } from '../pages/DashboardLayout';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
+import Wrapper from '../assets/wrappers/ThemeToggle'
+import { useDashboardContext } from '../pages/DashboardLayout'
 
 const ThemeToggle = () => {
-  const { isDarkTheme, toggleDarkTheme } = useDashboardContext();
+  const { isDarkTheme, toggleDarkTheme } = useDashboardContext()
   return (
     <Wrapper onClick={toggleDarkTheme}>
       {isDarkTheme ? (
@@ -1552,10 +1552,10 @@ const ThemeToggle = () => {
         <BsFillMoonFill className='toggle-icon' />
       )}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default ThemeToggle;
+export default ThemeToggle
 ```
 
 Navbar.jsx
@@ -1571,7 +1571,7 @@ Navbar.jsx
 assets/wrappers/ThemeToggle.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   background: transparent;
@@ -1586,8 +1586,8 @@ const Wrapper = styled.div`
     font-size: 1.15rem;
     color: var(--text-color);
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Dark Theme - Logic
@@ -1596,11 +1596,11 @@ DashboardLayout.jsx
 
 ```jsx
 const toggleDarkTheme = () => {
-  const newDarkTheme = !isDarkTheme;
-  setIsDarkTheme(newDarkTheme);
-  document.body.classList.toggle('dark-theme', newDarkTheme);
-  localStorage.setItem('darkTheme', newDarkTheme);
-};
+  const newDarkTheme = !isDarkTheme
+  setIsDarkTheme(newDarkTheme)
+  document.body.classList.toggle('dark-theme', newDarkTheme)
+  localStorage.setItem('darkTheme', newDarkTheme)
+}
 ```
 
 #### Access Theme
@@ -1627,8 +1627,8 @@ DashboardLayout.jsx
 
 ```jsx
 const Dashboard = ({ isDarkThemeEnabled }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
-};
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled)
+}
 ```
 
 #### Dark Theme CSS
@@ -1718,14 +1718,14 @@ Create test.js and implement named import
 test.js
 
 ```js
-export const value = 42;
+export const value = 42
 ```
 
 server.js
 
 ```js
-import { value } from './test.js';
-console.log(value);
+import { value } from './test.js'
+console.log(value)
 ```
 
 - don't forget about .js extension
@@ -1780,16 +1780,16 @@ npm i express@4.18.2 nodemon@2.0.22
 server.js
 
 ```js
-import express from 'express';
-const app = express();
+import express from 'express'
+const app = express()
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+  res.send('Hello World')
+})
 
 app.listen(5100, () => {
-  console.log('server running....');
-});
+  console.log('server running....')
+})
 ```
 
 package.json
@@ -1815,13 +1815,13 @@ Setup express middleware to accept json
 server
 
 ```js
-app.use(express.json());
+app.use(express.json())
 
 app.post('/', (req, res) => {
-  console.log(req);
+  console.log(req)
 
-  res.json({ message: 'Data received', data: req.body });
-});
+  res.json({ message: 'Data received', data: req.body })
+})
 ```
 
 #### Morgan and Dotenv
@@ -1839,9 +1839,9 @@ npm i morgan@1.10.0 dotenv@16.0.3
 ```
 
 ```js
-import morgan from 'morgan';
+import morgan from 'morgan'
 
-app.use(morgan('dev'));
+app.use(morgan('dev'))
 ```
 
 - create .env file in the root
@@ -1851,17 +1851,17 @@ app.use(morgan('dev'));
 server.js
 
 ```js
-import * as dotenv from 'dotenv';
-dotenv.config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+  app.use(morgan('dev'))
 }
 
-const port = process.env.PORT || 5100;
+const port = process.env.PORT || 5100
 app.listen(port, () => {
-  console.log(`server running on PORT ${port}....`);
-});
+  console.log(`server running on PORT ${port}....`)
+})
 ```
 
 #### New Features
@@ -1874,11 +1874,11 @@ app.listen(port, () => {
 try {
   const response = await fetch(
     'https://www.course-api.com/react-useReducer-cart-project'
-  );
-  const cartData = await response.json();
-  console.log(cartData);
+  )
+  const cartData = await response.json()
+  console.log(cartData)
 } catch (error) {
-  console.log(error);
+  console.log(error)
 }
 ```
 
@@ -1909,16 +1909,16 @@ npm i nanoid@4.0.2
 server.js
 
 ```js
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid'
 
 let jobs = [
   { id: nanoid(), company: 'apple', position: 'front-end' },
   { id: nanoid(), company: 'google', position: 'back-end' },
-];
+]
 
 app.get('/api/v1/jobs', (req, res) => {
-  res.status(200).json({ jobs });
-});
+  res.status(200).json({ jobs })
+})
 ```
 
 #### Create, FindOne, Modify and Delete
@@ -1927,76 +1927,76 @@ app.get('/api/v1/jobs', (req, res) => {
 // CREATE JOB
 
 app.post('/api/v1/jobs', (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
   if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
+    return res.status(400).json({ msg: 'please provide company and position' })
   }
-  const id = nanoid(10);
+  const id = nanoid(10)
   // console.log(id);
-  const job = { id, company, position };
-  jobs.push(job);
-  res.status(200).json({ job });
-});
+  const job = { id, company, position }
+  jobs.push(job)
+  res.status(200).json({ job })
+})
 
 // GET SINGLE JOB
 
 app.get('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  res.status(200).json({ job });
-});
+  res.status(200).json({ job })
+})
 
 // EDIT JOB
 
 app.patch('/api/v1/jobs/:id', (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
   if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
+    return res.status(400).json({ msg: 'please provide company and position' })
   }
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
 
-  job.company = company;
-  job.position = position;
-  res.status(200).json({ msg: 'job modified', job });
-});
+  job.company = company
+  job.position = position
+  res.status(200).json({ msg: 'job modified', job })
+})
 
 // DELETE JOB
 
 app.delete('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  const newJobs = jobs.filter((job) => job.id !== id);
-  jobs = newJobs;
+  const newJobs = jobs.filter((job) => job.id !== id)
+  jobs = newJobs
 
-  res.status(200).json({ msg: 'job deleted' });
-});
+  res.status(200).json({ msg: 'job deleted' })
+})
 ```
 
 #### Not Found Middleware
 
 ```js
 app.use('*', (req, res) => {
-  res.status(404).json({ msg: 'not found' });
-});
+  res.status(404).json({ msg: 'not found' })
+})
 ```
 
 #### Error Middleware
 
 ```js
 app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: 'something went wrong' });
-});
+  console.log(err)
+  res.status(500).json({ msg: 'something went wrong' })
+})
 ```
 
 #### Not Found and Error Middleware
@@ -2013,19 +2013,19 @@ In summary, the "not found" middleware is specifically designed to handle reques
 // GET ALL JOBS
 app.get('/api/v1/jobs', (req, res) => {
   // console.log(jobss);
-  res.status(200).json({ jobs });
-});
+  res.status(200).json({ jobs })
+})
 
 // GET SINGLE JOB
 app.get('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    throw new Error('no job with that id');
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    throw new Error('no job with that id')
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  res.status(200).json({ job });
-});
+  res.status(200).json({ job })
+})
 ```
 
 #### Controller and Router
@@ -2035,73 +2035,73 @@ setup controllers and router
 controllers/jobController.js
 
 ```js
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid'
 
 let jobs = [
   { id: nanoid(), company: 'apple', position: 'front-end developer' },
   { id: nanoid(), company: 'google', position: 'back-end developer' },
-];
+]
 
 export const getAllJobs = async (req, res) => {
-  res.status(200).json({ jobs });
-};
+  res.status(200).json({ jobs })
+}
 
 export const createJob = async (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
 
   if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
+    return res.status(400).json({ msg: 'please provide company and position' })
   }
-  const id = nanoid(10);
-  const job = { id, company, position };
-  jobs.push(job);
-  res.status(200).json({ job });
-};
+  const id = nanoid(10)
+  const job = { id, company, position }
+  jobs.push(job)
+  res.status(200).json({ job })
+}
 
 export const getJob = async (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
     // throw new Error('no job with that id');
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  res.status(200).json({ job });
-};
+  res.status(200).json({ job })
+}
 
 export const updateJob = async (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
   if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
+    return res.status(400).json({ msg: 'please provide company and position' })
   }
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
 
-  job.company = company;
-  job.position = position;
-  res.status(200).json({ msg: 'job modified', job });
-};
+  job.company = company
+  job.position = position
+  res.status(200).json({ msg: 'job modified', job })
+}
 
 export const deleteJob = async (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const { id } = req.params
+  const job = jobs.find((job) => job.id === id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  const newJobs = jobs.filter((job) => job.id !== id);
-  jobs = newJobs;
+  const newJobs = jobs.filter((job) => job.id !== id)
+  jobs = newJobs
 
-  res.status(200).json({ msg: 'job deleted' });
-};
+  res.status(200).json({ msg: 'job deleted' })
+}
 ```
 
 routes/jobRouter.js
 
 ```js
-import { Router } from 'express';
-const router = Router();
+import { Router } from 'express'
+const router = Router()
 
 import {
   getAllJobs,
@@ -2109,22 +2109,22 @@ import {
   createJob,
   updateJob,
   deleteJob,
-} from '../controllers/jobController.js';
+} from '../controllers/jobController.js'
 
 // router.get('/', getAllJobs);
 // router.post('/', createJob);
 
-router.route('/').get(getAllJobs).post(createJob);
-router.route('/:id').get(getJob).patch(updateJob).delete(deleteJob);
+router.route('/').get(getAllJobs).post(createJob)
+router.route('/:id').get(getJob).patch(updateJob).delete(deleteJob)
 
-export default router;
+export default router
 ```
 
 server.js
 
 ```js
-import jobRouter from './routers/jobRouter.js';
-app.use('/api/v1/jobs', jobRouter);
+import jobRouter from './routers/jobRouter.js'
+app.use('/api/v1/jobs', jobRouter)
 ```
 
 #### MongoDB
@@ -2148,16 +2148,16 @@ npm i mongoose@7.0.5
 server.js
 
 ```js
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 try {
-  await mongoose.connect(process.env.MONGO_URL);
+  await mongoose.connect(process.env.MONGO_URL)
   app.listen(port, () => {
-    console.log(`server running on PORT ${port}....`);
-  });
+    console.log(`server running on PORT ${port}....`)
+  })
 } catch (error) {
-  console.log(error);
-  process.exit(1);
+  console.log(error)
+  process.exit(1)
 }
 ```
 
@@ -2168,7 +2168,7 @@ models/JobModel.js
 enum - data type represents a field with a predefined set of values
 
 ```js
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const JobSchema = new mongoose.Schema(
   {
@@ -2190,9 +2190,9 @@ const JobSchema = new mongoose.Schema(
     },
   },
   { timestamps: true }
-);
+)
 
-export default mongoose.model('Job', JobSchema);
+export default mongoose.model('Job', JobSchema)
 ```
 
 #### Create Job
@@ -2200,13 +2200,13 @@ export default mongoose.model('Job', JobSchema);
 jobController.js
 
 ```js
-import Job from '../models/JobModel.js';
+import Job from '../models/JobModel.js'
 
 export const createJob = async (req, res) => {
-  const { company, position } = req.body;
-  const job = await Job.create({ company, position });
-  res.status(201).json({ job });
-};
+  const { company, position } = req.body
+  const job = await Job.create({ company, position })
+  res.status(201).json({ job })
+}
 ```
 
 #### Try / Catch
@@ -2215,14 +2215,14 @@ jobController.js
 
 ```js
 export const createJob = async (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
   try {
-    const job = await Job.create('something');
-    res.status(201).json({ job });
+    const job = await Job.create('something')
+    res.status(201).json({ job })
   } catch (error) {
-    res.status(500).json({ msg: 'server error' });
+    res.status(500).json({ msg: 'server error' })
   }
-};
+}
 ```
 
 #### express-async-errors
@@ -2240,18 +2240,18 @@ npm i express-async-errors@3.1.1
   server.js
 
 ```js
-import 'express-async-errors';
+import 'express-async-errors'
 ```
 
 jobController.js
 
 ```js
 export const createJob = async (req, res) => {
-  const { company, position } = req.body;
+  const { company, position } = req.body
 
-  const job = await Job.create({ company, position });
-  res.status(201).json({ job });
-};
+  const job = await Job.create({ company, position })
+  res.status(201).json({ job })
+}
 ```
 
 #### Get All Jobs
@@ -2260,22 +2260,22 @@ jobController.js
 
 ```js
 export const getAllJobs = async (req, res) => {
-  const jobs = await Job.find({});
-  res.status(200).json({ jobs });
-};
+  const jobs = await Job.find({})
+  res.status(200).json({ jobs })
+}
 ```
 
 #### Get Single Job
 
 ```js
 export const getJob = async (req, res) => {
-  const { id } = req.params;
-  const job = await Job.findById(id);
+  const { id } = req.params
+  const job = await Job.findById(id)
   if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  res.status(200).json({ job });
-};
+  res.status(200).json({ job })
+}
 ```
 
 #### Delete Job
@@ -2284,32 +2284,32 @@ jobController.js
 
 ```js
 export const deleteJob = async (req, res) => {
-  const { id } = req.params;
-  const removedJob = await Job.findByIdAndDelete(id);
+  const { id } = req.params
+  const removedJob = await Job.findByIdAndDelete(id)
 
   if (!removedJob) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
-  res.status(200).json({ job: removedJob });
-};
+  res.status(200).json({ job: removedJob })
+}
 ```
 
 #### Update Job
 
 ```js
 export const updateJob = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params
 
   const updatedJob = await Job.findByIdAndUpdate(id, req.body, {
     new: true,
-  });
+  })
 
   if (!updatedJob) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
+    return res.status(404).json({ msg: `no job with id ${id}` })
   }
 
-  res.status(200).json({ job: updatedJob });
-};
+  res.status(200).json({ job: updatedJob })
+}
 ```
 
 #### Status Codes
@@ -2339,13 +2339,13 @@ npm i http-status-codes@2.2.0
 jobController.js
 
 ```js
-res.status(StatusCodes.OK).json({ jobs });
+res.status(StatusCodes.OK).json({ jobs })
 ```
 
 createJob
 
 ```js
-res.status(StatusCodes.CREATED).json({ job });
+res.status(StatusCodes.CREATED).json({ job })
 ```
 
 #### Custom Error Class
@@ -2367,12 +2367,12 @@ export const getJob = async (req, res) => {
 errors/customErrors.js
 
 ```js
-import { StatusCodes } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes'
 export class NotFoundError extends Error {
   constructor(message) {
-    super(message);
-    this.name = 'NotFoundError';
-    this.statusCode = StatusCodes.NOT_FOUND;
+    super(message)
+    this.name = 'NotFoundError'
+    this.statusCode = StatusCodes.NOT_FOUND
   }
 }
 ```
@@ -2398,32 +2398,32 @@ By creating a custom error class like NotFoundError, you can provide more specif
 jobController.js
 
 ```js
-import { NotFoundError } from '../customErrors.js';
+import { NotFoundError } from '../customErrors.js'
 
-if (!job) throw new NotFoundError(`no job with id : ${id}`);
+if (!job) throw new NotFoundError(`no job with id : ${id}`)
 ```
 
 middleware/errorHandlerMiddleware.js
 
 ```js
-import { StatusCodes } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes'
 const errorHandlerMiddleware = (err, req, res, next) => {
-  console.log(err);
-  const statusCode = err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR;
-  const msg = err.message || 'Something went wrong, try again later';
+  console.log(err)
+  const statusCode = err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR
+  const msg = err.message || 'Something went wrong, try again later'
 
-  res.status(statusCode).json({ msg });
-};
+  res.status(statusCode).json({ msg })
+}
 
-export default errorHandlerMiddleware;
+export default errorHandlerMiddleware
 ```
 
 server.js
 
 ```js
-import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js'
 
-app.use(errorHandlerMiddleware);
+app.use(errorHandlerMiddleware)
 ```
 
 #### Bad Request Error
@@ -2438,23 +2438,23 @@ customErrors.js
 ```js
 export class BadRequestError extends Error {
   constructor(message) {
-    super(message);
-    this.name = 'BadRequestError';
-    this.statusCode = StatusCodes.BAD_REQUEST;
+    super(message)
+    this.name = 'BadRequestError'
+    this.statusCode = StatusCodes.BAD_REQUEST
   }
 }
 export class UnauthenticatedError extends Error {
   constructor(message) {
-    super(message);
-    this.name = 'UnauthenticatedError';
-    this.statusCode = StatusCodes.UNAUTHORIZED;
+    super(message)
+    this.name = 'UnauthenticatedError'
+    this.statusCode = StatusCodes.UNAUTHORIZED
   }
 }
 export class UnauthorizedError extends Error {
   constructor(message) {
-    super(message);
-    this.name = 'UnauthorizedError';
-    this.statusCode = StatusCodes.FORBIDDEN;
+    super(message)
+    this.name = 'UnauthorizedError'
+    this.statusCode = StatusCodes.FORBIDDEN
   }
 }
 ```
@@ -2473,32 +2473,32 @@ server.js
 
 ```js
 app.post('/api/v1/test', (req, res) => {
-  const { name } = req.body;
-  res.json({ msg: `hello ${name}` });
-});
+  const { name } = req.body
+  res.json({ msg: `hello ${name}` })
+})
 ```
 
 #### Express Validator
 
 ```js
-import { body, validationResult } from 'express-validator';
+import { body, validationResult } from 'express-validator'
 
 app.post(
   '/api/v1/test',
   [body('name').notEmpty().withMessage('name is required')],
   (req, res) => {
-    const errors = validationResult(req);
+    const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      const errorMessages = errors.array().map((error) => error.msg);
-      return res.status(400).json({ errors: errorMessages });
+      const errorMessages = errors.array().map((error) => error.msg)
+      return res.status(400).json({ errors: errorMessages })
     }
-    next();
+    next()
   },
   (req, res) => {
-    const { name } = req.body;
-    res.json({ msg: `hello ${name}` });
+    const { name } = req.body
+    res.json({ msg: `hello ${name}` })
   }
-);
+)
 ```
 
 #### Validation Middleware
@@ -2506,21 +2506,21 @@ app.post(
 middleware/validationMiddleware.js
 
 ```js
-import { body, validationResult } from 'express-validator';
-import { BadRequestError } from '../errors/customErrors';
+import { body, validationResult } from 'express-validator'
+import { BadRequestError } from '../errors/customErrors'
 const withValidationErrors = (validateValues) => {
   return [
     validateValues,
     (req, res, next) => {
-      const errors = validationResult(req);
+      const errors = validationResult(req)
       if (!errors.isEmpty()) {
-        const errorMessages = errors.array().map((error) => error.msg);
-        throw new BadRequestError(errorMessages);
+        const errorMessages = errors.array().map((error) => error.msg)
+        throw new BadRequestError(errorMessages)
       }
-      next();
+      next()
     },
-  ];
-};
+  ]
+}
 
 export const validateTest = withValidationErrors([
   body('name')
@@ -2529,7 +2529,7 @@ export const validateTest = withValidationErrors([
     .isLength({ min: 3, max: 50 })
     .withMessage('name must be between 3 and 50 characters long')
     .trim(),
-]);
+])
 ```
 
 #### Remove Test Case From Server
@@ -2543,27 +2543,27 @@ export const JOB_STATUS = {
   PENDING: 'pending',
   INTERVIEW: 'interview',
   DECLINED: 'declined',
-};
+}
 
 export const JOB_TYPE = {
   FULL_TIME: 'full-time',
   PART_TIME: 'part-time',
   INTERNSHIP: 'internship',
-};
+}
 
 export const JOB_SORT_BY = {
   NEWEST_FIRST: 'newest',
   OLDEST_FIRST: 'oldest',
   ASCENDING: 'a-z',
   DESCENDING: 'z-a',
-};
+}
 ```
 
 models/JobModel.js
 
 ```js
-import mongoose from 'mongoose';
-import { JOB_STATUS, JOB_TYPE } from '../utils/constants';
+import mongoose from 'mongoose'
+import { JOB_STATUS, JOB_TYPE } from '../utils/constants'
 const JobSchema = new mongoose.Schema(
   {
     company: String,
@@ -2584,7 +2584,7 @@ const JobSchema = new mongoose.Schema(
     },
   },
   { timestamps: true }
-);
+)
 ```
 
 #### Validate Create Job
@@ -2592,7 +2592,7 @@ const JobSchema = new mongoose.Schema(
 validationMiddleware.js
 
 ```js
-import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js';
+import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js'
 
 export const validateJobInput = withValidationErrors([
   body('company').notEmpty().withMessage('company is required'),
@@ -2602,18 +2602,18 @@ export const validateJobInput = withValidationErrors([
     .isIn(Object.values(JOB_STATUS))
     .withMessage('invalid status value'),
   body('jobType').isIn(Object.values(JOB_TYPE)).withMessage('invalid job type'),
-]);
+])
 ```
 
 ```js
-import { validateJobInput } from '../middleware/validationMiddleware.js';
+import { validateJobInput } from '../middleware/validationMiddleware.js'
 
-router.route('/').get(getAllJobs).post(validateJobInput, createJob);
+router.route('/').get(getAllJobs).post(validateJobInput, createJob)
 router
   .route('/:id')
   .get(getJob)
   .patch(validateJobInput, updateJob)
-  .delete(deleteJob);
+  .delete(deleteJob)
 ```
 
 - create job request
@@ -2633,51 +2633,51 @@ router
 validationMiddleware.js
 
 ```js
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-import { param } from 'express-validator';
+import { param } from 'express-validator'
 
 export const validateIdParam = withValidationErrors([
   param('id')
     .custom((value) => mongoose.Types.ObjectId.isValid(value))
     .withMessage('invalid MongoDB id'),
-]);
+])
 ```
 
 ```js
 export const validateIdParam = withValidationErrors([
   param('id').custom(async (value) => {
-    const isValidId = mongoose.Types.ObjectId.isValid(value);
-    if (!isValidId) throw new BadRequestError('invalid MongoDB id');
-    const job = await Job.findById(value);
-    if (!job) throw new NotFoundError(`no job with id : ${value}`);
+    const isValidId = mongoose.Types.ObjectId.isValid(value)
+    if (!isValidId) throw new BadRequestError('invalid MongoDB id')
+    const job = await Job.findById(value)
+    if (!job) throw new NotFoundError(`no job with id : ${value}`)
   }),
-]);
+])
 ```
 
 ```js
-import { body, param, validationResult } from 'express-validator';
-import { BadRequestError, NotFoundError } from '../errors/customErrors.js';
-import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js';
-import mongoose from 'mongoose';
-import Job from '../models/JobModel.js';
+import { body, param, validationResult } from 'express-validator'
+import { BadRequestError, NotFoundError } from '../errors/customErrors.js'
+import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js'
+import mongoose from 'mongoose'
+import Job from '../models/JobModel.js'
 
 const withValidationErrors = (validateValues) => {
   return [
     validateValues,
     (req, res, next) => {
-      const errors = validationResult(req);
+      const errors = validationResult(req)
       if (!errors.isEmpty()) {
-        const errorMessages = errors.array().map((error) => error.msg);
+        const errorMessages = errors.array().map((error) => error.msg)
         if (errorMessages[0].startsWith('no job')) {
-          throw new NotFoundError(errorMessages);
+          throw new NotFoundError(errorMessages)
         }
-        throw new BadRequestError(errorMessages);
+        throw new BadRequestError(errorMessages)
       }
-      next();
+      next()
     },
-  ];
-};
+  ]
+}
 ```
 
 - remove NotFoundError from getJob, updateJob, deleteJob controllers
@@ -2689,7 +2689,7 @@ const withValidationErrors = (validateValues) => {
 models/UserModel.js
 
 ```js
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
   name: String,
@@ -2708,9 +2708,9 @@ const UserSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user',
   },
-});
+})
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('User', UserSchema)
 ```
 
 #### User Controller and Router
@@ -2719,32 +2719,32 @@ controllers/authController.js
 
 ```js
 export const register = async (req, res) => {
-  res.send('register');
-};
+  res.send('register')
+}
 export const login = async (req, res) => {
-  res.send('register');
-};
+  res.send('register')
+}
 ```
 
 routers/authRouter.js
 
 ```js
-import { Router } from 'express';
-import { register, login } from '../controllers/authController.js';
-const router = Router();
+import { Router } from 'express'
+import { register, login } from '../controllers/authController.js'
+const router = Router()
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('/register', register)
+router.post('/login', login)
 
-export default router;
+export default router
 ```
 
 server.js
 
 ```js
-import authRouter from './routers/authRouter.js';
+import authRouter from './routers/authRouter.js'
 
-app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/auth', authRouter)
 ```
 
 #### Create User - Initial Setup
@@ -2752,13 +2752,13 @@ app.use('/api/v1/auth', authRouter);
 authController.js
 
 ```js
-import { StatusCodes } from 'http-status-codes';
-import User from '../models/UserModel.js';
+import { StatusCodes } from 'http-status-codes'
+import User from '../models/UserModel.js'
 
 export const register = async (req, res) => {
-  const user = await User.create(req.body);
-  res.status(StatusCodes.CREATED).json({ user });
-};
+  const user = await User.create(req.body)
+  res.status(StatusCodes.CREATED).json({ user })
+}
 ```
 
 - register user request
@@ -2778,7 +2778,7 @@ export const register = async (req, res) => {
 validationMiddleware.js
 
 ```js
-import User from '../models/UserModel.js';
+import User from '../models/UserModel.js'
 
 export const validateRegisterInput = withValidationErrors([
   body('name').notEmpty().withMessage('name is required'),
@@ -2788,9 +2788,9 @@ export const validateRegisterInput = withValidationErrors([
     .isEmail()
     .withMessage('invalid email format')
     .custom(async (email) => {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email })
       if (user) {
-        throw new BadRequestError('email already exists');
+        throw new BadRequestError('email already exists')
       }
     }),
   body('password')
@@ -2800,15 +2800,15 @@ export const validateRegisterInput = withValidationErrors([
     .withMessage('password must be at least 8 characters long'),
   body('location').notEmpty().withMessage('location is required'),
   body('lastName').notEmpty().withMessage('last name is required'),
-]);
+])
 ```
 
 authRouter.js
 
 ```js
-import { validateRegisterInput } from '../middleware/validationMiddleware.js';
+import { validateRegisterInput } from '../middleware/validationMiddleware.js'
 
-router.post('/register', validateRegisterInput, register);
+router.post('/register', validateRegisterInput, register)
 ```
 
 #### Admin Role
@@ -2817,10 +2817,10 @@ authController.js
 
 ```js
 // first registered user is an admin
-const isFirstAccount = (await User.countDocuments()) === 0;
-req.body.role = isFirstAccount ? 'admin' : 'user';
+const isFirstAccount = (await User.countDocuments()) === 0
+req.body.role = isFirstAccount ? 'admin' : 'user'
 
-const user = await User.create(req.body);
+const user = await User.create(req.body)
 ```
 
 #### Hash Passwords
@@ -2835,16 +2835,16 @@ npm i bcryptjs@2.4.3
 authController.js
 
 ```js
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs'
 
 const register = async (req, res) => {
   // a random value that is added to the password before hashing
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(req.body.password, salt);
-  req.body.password = hashedPassword;
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(req.body.password, salt)
+  req.body.password = hashedPassword
 
-  const user = await User.create(req.body);
-};
+  const user = await User.create(req.body)
+}
 ```
 
 const salt = await bcrypt.genSalt(10);
@@ -2876,27 +2876,27 @@ Overall, while bcrypt and bcryptjs are both good choices for hashing passwords i
 utils/passwordUtils.js
 
 ```js
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs'
 
 export async function hashPassword(password) {
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-  return hashedPassword;
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(password, salt)
+  return hashedPassword
 }
 ```
 
 authController.js
 
 ```js
-import { hashPassword } from '../utils/passwordUtils.js';
+import { hashPassword } from '../utils/passwordUtils.js'
 
 const register = async (req, res) => {
-  const hashedPassword = await hashPassword(req.body.password);
-  req.body.password = hashedPassword;
+  const hashedPassword = await hashPassword(req.body.password)
+  req.body.password = hashedPassword
 
-  const user = await User.create(req.body);
-  res.status(StatusCodes.CREATED).json({ msg: 'user created' });
-};
+  const user = await User.create(req.body)
+  res.status(StatusCodes.CREATED).json({ msg: 'user created' })
+}
 ```
 
 #### Login User
@@ -2920,15 +2920,15 @@ export const validateLoginInput = withValidationErrors([
     .isEmail()
     .withMessage('invalid email format'),
   body('password').notEmpty().withMessage('password is required'),
-]);
+])
 ```
 
 authRouter.js
 
 ```js
-import { validateLoginInput } from '../middleware/validationMiddleware.js';
+import { validateLoginInput } from '../middleware/validationMiddleware.js'
 
-router.post('/login', validateLoginInput, login);
+router.post('/login', validateLoginInput, login)
 ```
 
 #### Unauthenticated Error
@@ -2936,17 +2936,17 @@ router.post('/login', validateLoginInput, login);
 authController.js
 
 ```js
-import { UnauthenticatedError } from '../errors/customErrors.js';
+import { UnauthenticatedError } from '../errors/customErrors.js'
 
 const login = async (req, res) => {
   // check if user exists
   // check if password is correct
 
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) throw new UnauthenticatedError('invalid credentials');
+  const user = await User.findOne({ email: req.body.email })
+  if (!user) throw new UnauthenticatedError('invalid credentials')
 
-  res.send('login route');
-};
+  res.send('login route')
+}
 ```
 
 #### Compare Password
@@ -2955,39 +2955,39 @@ passwordUtils.js
 
 ```js
 export async function comparePassword(password, hashedPassword) {
-  const isMatch = await bcrypt.compare(password, hashedPassword);
-  return isMatch;
+  const isMatch = await bcrypt.compare(password, hashedPassword)
+  return isMatch
 }
 ```
 
 authController.js
 
 ```js
-import { hashPassword, comparePassword } from '../utils/passwordUtils.js';
+import { hashPassword, comparePassword } from '../utils/passwordUtils.js'
 
 const login = async (req, res) => {
   // check if user exists
   // check if password is correct
 
-  const user = await User.findOne({ email: req.body.email });
+  const user = await User.findOne({ email: req.body.email })
 
-  if (!user) throw new UnauthenticatedError('invalid credentials');
+  if (!user) throw new UnauthenticatedError('invalid credentials')
 
   const isPasswordCorrect = await comparePassword(
     req.body.password,
     user.password
-  );
+  )
 
-  if (!isPasswordCorrect) throw new UnauthenticatedError('invalid credentials');
-  res.send('login route');
-};
+  if (!isPasswordCorrect) throw new UnauthenticatedError('invalid credentials')
+  res.send('login route')
+}
 ```
 
 Refactor
 
 ```js
-const isValidUser = user && (await comparePassword(password, user.password));
-if (!isValidUser) throw new UnauthenticatedError('invalid credentials');
+const isValidUser = user && (await comparePassword(password, user.password))
+if (!isValidUser) throw new UnauthenticatedError('invalid credentials')
 ```
 
 #### JSON Web Token
@@ -3003,14 +3003,14 @@ npm i jsonwebtoken@9.0.0
 utils/tokenUtils.js
 
 ```js
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 
 export const createJWT = (payload) => {
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
-  });
-  return token;
-};
+  })
+  return token
+}
 ```
 
 JWT_SECRET represents the secret key used to sign the JWT. When creating a JWT, the payload (data) is signed with this secret key to generate a unique token. The secret key should be kept secure and should not be disclosed to unauthorized parties.
@@ -3022,10 +3022,10 @@ These environment variables (JWT_SECRET and JWT_EXPIRES_IN) are read from the sy
 authController.js
 
 ```js
-import { createJWT } from '../utils/tokenUtils.js';
+import { createJWT } from '../utils/tokenUtils.js'
 
-const token = createJWT({ userId: user._id, role: user.role });
-console.log(token);
+const token = createJWT({ userId: user._id, role: user.role })
+console.log(token)
 ```
 
 #### Test JWT (optional)
@@ -3054,19 +3054,19 @@ An HTTP-only cookie is a type of cookie that is designed to be inaccessible to J
 authControllers.js
 
 ```js
-const oneDay = 1000 * 60 * 60 * 24;
+const oneDay = 1000 * 60 * 60 * 24
 
 res.cookie('token', token, {
   httpOnly: true,
   expires: new Date(Date.now() + oneDay),
   secure: process.env.NODE_ENV === 'production',
-});
+})
 
-res.status(StatusCodes.CREATED).json({ msg: 'user logged in' });
+res.status(StatusCodes.CREATED).json({ msg: 'user logged in' })
 ```
 
 ```js
-const oneDay = 1000 * 60 * 60 * 24;
+const oneDay = 1000 * 60 * 60 * 24
 ```
 
 This line defines a constant oneDay that represents the number of milliseconds in a day. This value is used later to set the expiration time for the cookie.
@@ -3087,10 +3087,10 @@ jobsController.js
 
 ```js
 export const getAllJobs = async (req, res) => {
-  console.log(req);
-  const jobs = await Job.find({});
-  res.status(StatusCodes.OK).json({ jobs });
-};
+  console.log(req)
+  const jobs = await Job.find({})
+  res.status(StatusCodes.OK).json({ jobs })
+}
 ```
 
 #### Clean DB
@@ -3118,17 +3118,17 @@ middleware/authMiddleware.js
 
 ```js
 export const authenticateUser = async (req, res, next) => {
-  console.log('auth middleware');
-  next();
-};
+  console.log('auth middleware')
+  next()
+}
 ```
 
 server.js
 
 ```js
-import { authenticateUser } from './middleware/authMiddleware.js';
+import { authenticateUser } from './middleware/authMiddleware.js'
 
-app.use('/api/v1/jobs', authenticateUser, jobRouter);
+app.use('/api/v1/jobs', authenticateUser, jobRouter)
 ```
 
 ##### Cookie Parser
@@ -3142,8 +3142,8 @@ npm i cookie-parser@1.4.6
 server.js
 
 ```js
-import cookieParser from 'cookie-parser';
-app.use(cookieParser());
+import cookieParser from 'cookie-parser'
+app.use(cookieParser())
 ```
 
 #### Access Token
@@ -3151,15 +3151,15 @@ app.use(cookieParser());
 authMiddleware.js
 
 ```js
-import { UnauthenticatedError } from '../customErrors.js';
+import { UnauthenticatedError } from '../customErrors.js'
 
 export const authenticateUser = async (req, res, next) => {
-  const { token } = req.cookies;
+  const { token } = req.cookies
   if (!token) {
-    throw new UnauthenticatedError('authentication invalid');
+    throw new UnauthenticatedError('authentication invalid')
   }
-  next();
-};
+  next()
+}
 ```
 
 #### Verify Token
@@ -3168,41 +3168,41 @@ utils/tokenUtils.js
 
 ```js
 export const verifyJWT = (token) => {
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  return decoded;
-};
+  const decoded = jwt.verify(token, process.env.JWT_SECRET)
+  return decoded
+}
 ```
 
 authMiddleware.js
 
 ```js
-import { UnauthenticatedError } from '../customErrors.js';
-import { verifyJWT } from '../utils/tokenUtils.js';
+import { UnauthenticatedError } from '../customErrors.js'
+import { verifyJWT } from '../utils/tokenUtils.js'
 
 export const authenticateUser = async (req, res, next) => {
-  const { token } = req.cookies;
+  const { token } = req.cookies
   if (!token) {
-    throw new UnauthenticatedError('authentication invalid');
+    throw new UnauthenticatedError('authentication invalid')
   }
 
   try {
-    const { userId, role } = verifyJWT(token);
-    req.user = { userId, role };
-    next();
+    const { userId, role } = verifyJWT(token)
+    req.user = { userId, role }
+    next()
   } catch (error) {
-    throw new UnauthenticatedError('authentication invalid');
+    throw new UnauthenticatedError('authentication invalid')
   }
-};
+}
 ```
 
 jobController.js
 
 ```js
 export const getAllJobs = async (req, res) => {
-  console.log(req.user);
-  const jobs = await Job.find({ createdBy: req.user.userId });
-  res.status(StatusCodes.OK).json({ jobs });
-};
+  console.log(req.user)
+  const jobs = await Job.find({ createdBy: req.user.userId })
+  res.status(StatusCodes.OK).json({ jobs })
+}
 ```
 
 #### Refactor Create Job
@@ -3211,10 +3211,10 @@ jobController.js
 
 ```js
 export const createJob = async (req, res) => {
-  req.body.createdBy = req.user.userId;
-  const job = await Job.create(req.body);
-  res.status(StatusCodes.CREATED).json({ job });
-};
+  req.body.createdBy = req.user.userId
+  const job = await Job.create(req.body)
+  res.status(StatusCodes.CREATED).json({ job })
+}
 ```
 
 #### Check Permissions
@@ -3246,20 +3246,20 @@ import {
   BadRequestError,
   NotFoundError,
   UnauthorizedError,
-} from '../errors/customErrors.js';
+} from '../errors/customErrors.js'
 
 export const validateIdParam = withValidationErrors([
   param('id').custom(async (value, { req }) => {
-    const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
-    if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id');
-    const job = await Job.findById(value);
-    if (!job) throw new NotFoundError(`no job with id ${value}`);
-    const isAdmin = req.user.role === 'admin';
-    const isOwner = req.user.userId === job.createdBy.toString();
+    const isValidMongoId = mongoose.Types.ObjectId.isValid(value)
+    if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id')
+    const job = await Job.findById(value)
+    if (!job) throw new NotFoundError(`no job with id ${value}`)
+    const isAdmin = req.user.role === 'admin'
+    const isOwner = req.user.userId === job.createdBy.toString()
     if (!isAdmin && !isOwner)
-      throw UnauthorizedError('not authorized to access this route');
+      throw UnauthorizedError('not authorized to access this route')
   }),
-]);
+])
 ```
 
 #### Logout User
@@ -3271,21 +3271,21 @@ const logout = (req, res) => {
   res.cookie('token', 'logout', {
     httpOnly: true,
     expires: new Date(Date.now()),
-  });
-  res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
-};
+  })
+  res.status(StatusCodes.OK).json({ msg: 'user logged out!' })
+}
 ```
 
 routes/authRouter.js
 
 ```js
-import { Router } from 'express';
-const router = Router();
-import { logout } from '../controllers/authController.js';
+import { Router } from 'express'
+const router = Router()
+import { logout } from '../controllers/authController.js'
 
-router.get('/logout', logout);
+router.get('/logout', logout)
 
-export default router;
+export default router
 ```
 
 #### User Routes
@@ -3293,56 +3293,56 @@ export default router;
 controllers/userController.js
 
 ```js
-import { StatusCodes } from 'http-status-codes';
-import User from '../models/User.js';
-import Job from '../models/Job.js';
+import { StatusCodes } from 'http-status-codes'
+import User from '../models/User.js'
+import Job from '../models/Job.js'
 
 export const getCurrentUser = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'get current user' });
-};
+  res.status(StatusCodes.OK).json({ msg: 'get current user' })
+}
 
 export const getApplicationStats = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'application stats' });
-};
+  res.status(StatusCodes.OK).json({ msg: 'application stats' })
+}
 
 export const updateUser = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'update user' });
-};
+  res.status(StatusCodes.OK).json({ msg: 'update user' })
+}
 ```
 
 routes/userRouter.js
 
 ```js
-import { Router } from 'express';
-const router = Router();
+import { Router } from 'express'
+const router = Router()
 
 import {
   getCurrentUser,
   getApplicationStats,
   updateUser,
-} from '../controllers/userController.js';
+} from '../controllers/userController.js'
 
-router.get('/current-user', getCurrentUser);
-router.get('/admin/app-stats', getApplicationStats);
-router.patch('/update-user', updateUser);
-export default router;
+router.get('/current-user', getCurrentUser)
+router.get('/admin/app-stats', getApplicationStats)
+router.patch('/update-user', updateUser)
+export default router
 ```
 
 server.js
 
 ```js
-import userRouter from './routers/userRouter.js';
+import userRouter from './routers/userRouter.js'
 
-app.use('/api/v1/users', authenticateUser, userRouter);
+app.use('/api/v1/users', authenticateUser, userRouter)
 ```
 
 #### Get Current User
 
 ```js
 export const getCurrentUser = async (req, res) => {
-  const user = await User.findOne({ _id: req.user.userId });
-  res.status(StatusCodes.OK).json({ user });
-};
+  const user = await User.findOne({ _id: req.user.userId })
+  res.status(StatusCodes.OK).json({ user })
+}
 ```
 
 #### Remove Password
@@ -3351,18 +3351,18 @@ models/UserModel.js
 
 ```js
 UserSchema.methods.toJSON = function () {
-  var obj = this.toObject();
-  delete obj.password;
-  return obj;
-};
+  var obj = this.toObject()
+  delete obj.password
+  return obj
+}
 ```
 
 ```js
 export const getCurrentUser = async (req, res) => {
-  const user = await User.findOne({ _id: req.user.userId });
-  const userWithoutPassword = user.toJSON();
-  res.status(StatusCodes.OK).json({ user: userWithoutPassword });
-};
+  const user = await User.findOne({ _id: req.user.userId })
+  const userWithoutPassword = user.toJSON()
+  res.status(StatusCodes.OK).json({ user: userWithoutPassword })
+}
 ```
 
 #### Update User
@@ -3378,21 +3378,21 @@ const validateUpdateUserInput = withValidationErrors([
     .isEmail()
     .withMessage('invalid email format')
     .custom(async (email, { req }) => {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email })
       if (user && user._id.toString() !== req.user.userId) {
-        throw new Error('email already exists');
+        throw new Error('email already exists')
       }
     }),
   body('lastName').notEmpty().withMessage('last name is required'),
   body('location').notEmpty().withMessage('location is required'),
-]);
+])
 ```
 
 ```js
 export const updateUser = async (req, res) => {
-  const updatedUser = await User.findByIdAndUpdate(req.user.userId, req.body);
-  res.status(StatusCodes.OK).json({ msg: 'user updated' });
-};
+  const updatedUser = await User.findByIdAndUpdate(req.user.userId, req.body)
+  res.status(StatusCodes.OK).json({ msg: 'user updated' })
+}
 ```
 
 ```json
@@ -3408,30 +3408,30 @@ export const updateUser = async (req, res) => {
 
 ```js
 export const getApplicationStats = async (req, res) => {
-  const users = await User.countDocuments();
-  const jobs = await Job.countDocuments();
-  res.status(StatusCodes.OK).json({ users, jobs });
-};
+  const users = await User.countDocuments()
+  const jobs = await Job.countDocuments()
+  res.status(StatusCodes.OK).json({ users, jobs })
+}
 ```
 
 ```js
 export const authorizePermissions = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      throw new UnauthorizedError('Unauthorized to access this route');
+      throw new UnauthorizedError('Unauthorized to access this route')
     }
-    next();
-  };
-};
+    next()
+  }
+}
 ```
 
 ```js
-import { authorizePermissions } from '../middleware/authMiddleware.js';
+import { authorizePermissions } from '../middleware/authMiddleware.js'
 
 router.get('/admin/app-stats', [
   authorizePermissions('admin'),
   getApplicationStats,
-]);
+])
 ```
 
 #### Setup Proxy
@@ -3456,8 +3456,8 @@ server.js
 
 ```js
 app.get('/api/v1/test', (req, res) => {
-  res.json({ msg: 'test route' });
-});
+  res.json({ msg: 'test route' })
+})
 ```
 
 client/src/main.jsx
@@ -3465,7 +3465,7 @@ client/src/main.jsx
 ```js
 fetch('http://localhost:5100/api/v1/test')
   .then((res) => res.json())
-  .then((data) => console.log(data));
+  .then((data) => console.log(data))
 ```
 
 client/vite.config.js
@@ -3482,7 +3482,7 @@ export default defineConfig({
       },
     },
   },
-});
+})
 ```
 
 main.jsx
@@ -3490,7 +3490,7 @@ main.jsx
 ```js
 fetch('/api/v1/test')
   .then((res) => res.json())
-  .then((data) => console.log(data));
+  .then((data) => console.log(data))
 ```
 
 This code configures a proxy rule for the development server, specifically for requests that start with /api. Let's go through each property:
@@ -3536,10 +3536,10 @@ npm i axios@1.3.6
 main.jsx
 
 ```js
-import axios from 'axios';
+import axios from 'axios'
 
-const data = await axios.get('/api/v1/test');
-console.log(data);
+const data = await axios.get('/api/v1/test')
+console.log(data)
 ```
 
 #### Custom Instance
@@ -3547,40 +3547,40 @@ console.log(data);
 utils/customFetch.js
 
 ```js
-import axios from 'axios';
+import axios from 'axios'
 const customFetch = axios.create({
   baseURL: '/api/v1',
-});
+})
 
-export default customFetch;
+export default customFetch
 ```
 
 main.jsx
 
 ```js
-import customFetch from './utils/customFetch.js';
+import customFetch from './utils/customFetch.js'
 
-const data = await customFetch.get('/test');
-console.log(data);
+const data = await customFetch.get('/test')
+console.log(data)
 ```
 
 #### Typical Form Submission
 
 ```js
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react'
+import axios from 'axios'
 const MyForm = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = await axios.post('url', { value });
-  };
+    event.preventDefault()
+    const data = await axios.post('url', { value })
+  }
 
-  return <form onSubmit={handleSubmit}>.....</form>;
-};
+  return <form onSubmit={handleSubmit}>.....</form>
+}
 
-export default MyForm;
+export default MyForm
 ```
 
 #### React Router - Action
@@ -3590,9 +3590,9 @@ Route actions are the "writes" to route loader "reads". They provide a way for a
 Register.jsx
 
 ```js
-import { Form, redirect, useNavigation, Link } from 'react-router-dom';
-import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
-import { FormRow, Logo } from '../components';
+import { Form, redirect, useNavigation, Link } from 'react-router-dom'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
+import { FormRow, Logo } from '../components'
 
 const Register = () => {
   return (
@@ -3601,9 +3601,9 @@ const Register = () => {
         ...
       </Form>
     </Wrapper>
-  );
-};
-export default Register;
+  )
+}
+export default Register
 ```
 
 App.jsx
@@ -3630,15 +3630,15 @@ Register.jsx
 
 ```js
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
   try {
-    await customFetch.post('/auth/register', data);
-    return redirect('/login');
+    await customFetch.post('/auth/register', data)
+    return redirect('/login')
   } catch (error) {
-    return error;
+    return error
   }
-};
+}
 ```
 
 App.jsx
@@ -3670,8 +3670,8 @@ Register.jsx
 
 ```js
 const Register = () => {
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
   return (
     <Wrapper>
       <Form method='post' className='form'>
@@ -3682,9 +3682,9 @@ const Register = () => {
         ...
       </Form>
     </Wrapper>
-  );
-};
-export default Register;
+  )
+}
+export default Register
 ```
 
 #### React-Toastify
@@ -3700,60 +3700,60 @@ npm i react-toastify@9.1.2
 main.jsx
 
 ```js
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
     <ToastContainer position='top-center' />
   </React.StrictMode>
-);
+)
 ```
 
 Register.jsx
 
 ```js
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
   try {
-    await customFetch.post('/auth/register', data);
-    toast.success('Registration successful');
-    return redirect('/login');
+    await customFetch.post('/auth/register', data)
+    toast.success('Registration successful')
+    return redirect('/login')
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
+    toast.error(error?.response?.data?.msg)
+    return error
   }
-};
+}
 ```
 
 #### Login User
 
 ```js
-import { Link, Form, redirect, useNavigation } from 'react-router-dom';
-import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
-import { FormRow, Logo } from '../components';
-import customFetch from '../utils/customFetch';
-import { toast } from 'react-toastify';
+import { Link, Form, redirect, useNavigation } from 'react-router-dom'
+import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
+import { FormRow, Logo } from '../components'
+import customFetch from '../utils/customFetch'
+import { toast } from 'react-toastify'
 
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
   try {
-    await customFetch.post('/auth/login', data);
-    toast.success('Login successful');
-    return redirect('/dashboard');
+    await customFetch.post('/auth/login', data)
+    toast.success('Login successful')
+    return redirect('/dashboard')
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
+    toast.error(error?.response?.data?.msg)
+    return error
   }
-};
+}
 
 const Login = () => {
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
   return (
     <Wrapper>
       <Form method='post' className='form'>
@@ -3775,37 +3775,37 @@ const Login = () => {
         </p>
       </Form>
     </Wrapper>
-  );
-};
-export default Login;
+  )
+}
+export default Login
 ```
 
 #### Access Action Data (optional)
 
 ```js
-import { useActionData } from 'react-router-dom';
+import { useActionData } from 'react-router-dom'
 
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  const errors = { msg: '' };
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
+  const errors = { msg: '' }
   if (data.password.length < 3) {
-    errors.msg = 'password too short';
-    return errors;
+    errors.msg = 'password too short'
+    return errors
   }
   try {
-    await customFetch.post('/auth/login', data);
-    toast.success('Login successful');
-    return redirect('/dashboard');
+    await customFetch.post('/auth/login', data)
+    toast.success('Login successful')
+    return redirect('/dashboard')
   } catch (error) {
     // toast.error(error?.response?.data?.msg);
-    errors.msg = error.response.data.msg;
-    return errors;
+    errors.msg = error.response.data.msg
+    return errors
   }
-};
+}
 
 const Login = () => {
-  const errors = useActionData();
+  const errors = useActionData()
 
   return (
     <Wrapper>
@@ -3815,9 +3815,9 @@ const Login = () => {
         ...
       </Form>
     </Wrapper>
-  );
-};
-export default Login;
+  )
+}
+export default Login
 ```
 
 #### Get Current User
@@ -3878,18 +3878,18 @@ export default DashboardLayout;
 DashboardLayout.jsx
 
 ```js
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const DashboardLayout = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const logoutUser = async () => {
-    navigate('/');
-    await customFetch.get('/auth/logout');
-    toast.success('Logging out...');
-  };
-};
+    navigate('/')
+    await customFetch.get('/auth/logout')
+    toast.success('Logging out...')
+  }
+}
 ```
 
 #### AddJob - Structure
@@ -3897,18 +3897,18 @@ const DashboardLayout = () => {
 pages/AddJob.jsx
 
 ```js
-import { FormRow } from '../components';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { useOutletContext } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
-import { Form, useNavigation, redirect } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import customFetch from '../utils/customFetch';
+import { FormRow } from '../components'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { useOutletContext } from 'react-router-dom'
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants'
+import { Form, useNavigation, redirect } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import customFetch from '../utils/customFetch'
 
 const AddJob = () => {
-  const { user } = useOutletContext();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const { user } = useOutletContext()
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
 
   return (
     <Wrapper>
@@ -3934,10 +3934,10 @@ const AddJob = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default AddJob;
+export default AddJob
 ```
 
 #### Select Input
@@ -3958,7 +3958,7 @@ export default AddJob;
         <option key={itemValue} value={itemValue}>
           {itemValue}
         </option>
-      );
+      )
     })}
   </select>
 </div>
@@ -3986,13 +3986,13 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = '' }) => {
             <option key={itemValue} value={itemValue}>
               {itemValue}
             </option>
-          );
+          )
         })}
       </select>
     </div>
-  );
-};
-export default FormRowSelect;
+  )
+}
+export default FormRowSelect
 ```
 
 pages/AddJob.jsx
@@ -4018,18 +4018,18 @@ AddJob.jsx
 
 ```js
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
 
   try {
-    await customFetch.post('/jobs', data);
-    toast.success('Job added successfully');
-    return null;
+    await customFetch.post('/jobs', data)
+    toast.success('Job added successfully')
+    return null
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
+    toast.error(error?.response?.data?.msg)
+    return error
   }
-};
+}
 ```
 
 #### Pending Class and Redirect
@@ -4046,18 +4046,18 @@ AddJob.jsx
 
 ```js
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
 
   try {
-    await customFetch.post('/jobs', data);
-    toast.success('Job added successfully');
-    return redirect('all-jobs');
+    await customFetch.post('/jobs', data)
+    toast.success('Job added successfully')
+    return redirect('all-jobs')
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
+    toast.error(error?.response?.data?.msg)
+    return error
   }
-};
+}
 ```
 
 #### Add Job - CSS(optional)
@@ -4065,7 +4065,7 @@ export const action = async ({ request }) => {
 wrappers/DashboardFormPage.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   border-radius: var(--border-radius);
@@ -4111,9 +4111,9 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### All Jobs - Structure
@@ -4122,54 +4122,54 @@ export default Wrapper;
 - handle loader in App.jsx
 
 ```js
-import { toast } from 'react-toastify';
-import { JobsContainer, SearchContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useLoaderData } from 'react-router-dom';
-import { useContext, createContext } from 'react';
+import { toast } from 'react-toastify'
+import { JobsContainer, SearchContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useLoaderData } from 'react-router-dom'
+import { useContext, createContext } from 'react'
 
 export const loader = async ({ request }) => {
   try {
-    const { data } = await customFetch.get('/jobs');
+    const { data } = await customFetch.get('/jobs')
     return {
       data,
-    };
+    }
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
+    toast.error(error?.response?.data?.msg)
+    return error
   }
-};
+}
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
+  const { data } = useLoaderData()
 
   return (
     <>
       <SearchContainer />
       <JobsContainer />
     </>
-  );
-};
-export default AllJobs;
+  )
+}
+export default AllJobs
 ```
 
 #### Setup All Jobs Context
 
 ```js
-const AllJobsContext = createContext();
+const AllJobsContext = createContext()
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
+  const { data } = useLoaderData()
 
   return (
     <AllJobsContext.Provider value={{ data }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>
-  );
-};
+  )
+}
 
-export const useAllJobsContext = () => useContext(AllJobsContext);
+export const useAllJobsContext = () => useContext(AllJobsContext)
 ```
 
 #### Render Jobs
@@ -4179,34 +4179,34 @@ export const useAllJobsContext = () => useContext(AllJobsContext);
 JobsContainer.jsx
 
 ```js
-import Job from './Job';
-import Wrapper from '../assets/wrappers/JobsContainer';
+import Job from './Job'
+import Wrapper from '../assets/wrappers/JobsContainer'
 
-import { useAllJobsContext } from '../pages/AllJobs';
+import { useAllJobsContext } from '../pages/AllJobs'
 
 const JobsContainer = () => {
-  const { data } = useAllJobsContext();
-  const { jobs } = data;
+  const { data } = useAllJobsContext()
+  const { jobs } = data
   if (jobs.length === 0) {
     return (
       <Wrapper>
         <h2>No jobs to display...</h2>
       </Wrapper>
-    );
+    )
   }
 
   return (
     <Wrapper>
       <div className='jobs'>
         {jobs.map((job) => {
-          return <Job key={job._id} {...job} />;
+          return <Job key={job._id} {...job} />
         })}
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default JobsContainer;
+export default JobsContainer
 ```
 
 #### JobsContainer - CSS (optional)
@@ -4214,7 +4214,7 @@ export default JobsContainer;
 wrappers/JobsContainer.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   margin-top: 4rem;
@@ -4237,8 +4237,8 @@ const Wrapper = styled.section`
       gap: 2rem;
     }
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Dayjs
@@ -4254,13 +4254,13 @@ npm i dayjs@1.11.7
 - create JobInfo component
 
 ```js
-import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
-import { Link, Form } from 'react-router-dom';
-import Wrapper from '../assets/wrappers/Job';
-import JobInfo from './JobInfo';
-import day from 'dayjs';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
-day.extend(advancedFormat);
+import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa'
+import { Link, Form } from 'react-router-dom'
+import Wrapper from '../assets/wrappers/Job'
+import JobInfo from './JobInfo'
+import day from 'dayjs'
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+day.extend(advancedFormat)
 
 const Job = ({
   _id,
@@ -4271,7 +4271,7 @@ const Job = ({
   createdAt,
   jobStatus,
 }) => {
-  const date = day(createdAt).format('MMM Do, YYYY');
+  const date = day(createdAt).format('MMM Do, YYYY')
 
   return (
     <Wrapper>
@@ -4300,16 +4300,16 @@ const Job = ({
         </footer>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Job;
+export default Job
 ```
 
 #### JobInfo Component
 
 ```js
-import Wrapper from '../assets/wrappers/JobInfo';
+import Wrapper from '../assets/wrappers/JobInfo'
 
 const JobInfo = ({ icon, text }) => {
   return (
@@ -4317,10 +4317,10 @@ const JobInfo = ({ icon, text }) => {
       <span className='job-icon'>{icon}</span>
       <span className='job-text'>{text}</span>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default JobInfo;
+export default JobInfo
 ```
 
 #### JobInfo - CSS (optional)
@@ -4328,7 +4328,7 @@ export default JobInfo;
 wrappers/JobInfo.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -4347,14 +4347,14 @@ const Wrapper = styled.div`
     text-transform: capitalize;
     letter-spacing: var(--letter-spacing);
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Job - CSS (optional)
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.article`
   background: var(--background-secondary-color);
@@ -4435,9 +4435,9 @@ const Wrapper = styled.article`
   .edit-btn {
     margin-right: 0.5rem;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### Edit Job - Setup
@@ -4453,25 +4453,25 @@ Job.jsx
 pages/EditJob.jsx
 
 ```js
-import { FormRow, FormRowSelect } from '../components';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { useLoaderData } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
-import { Form, useNavigation, redirect } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import customFetch from '../utils/customFetch';
+import { FormRow, FormRowSelect } from '../components'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { useLoaderData } from 'react-router-dom'
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants'
+import { Form, useNavigation, redirect } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import customFetch from '../utils/customFetch'
 
 export const loader = async () => {
-  return null;
-};
+  return null
+}
 export const action = async () => {
-  return null;
-};
+  return null
+}
 
 const EditJob = () => {
-  return <h1>EditJob Page</h1>;
-};
-export default EditJob;
+  return <h1>EditJob Page</h1>
+}
+export default EditJob
 ```
 
 - import EditJob page
@@ -4495,51 +4495,51 @@ pages/EditJob.jsx
 ```js
 export const loader = async ({ params }) => {
   try {
-    const { data } = await customFetch.get(`/jobs/${params.id}`);
-    return data;
+    const { data } = await customFetch.get(`/jobs/${params.id}`)
+    return data
   } catch (error) {
-    toast.error(error.response.data.msg);
-    return redirect('/dashboard/all-jobs');
+    toast.error(error.response.data.msg)
+    return redirect('/dashboard/all-jobs')
   }
-};
+}
 export const action = async () => {
-  return null;
-};
+  return null
+}
 
 const EditJob = () => {
-  const params = useParams();
-  console.log(params);
-  const { job } = useLoaderData();
+  const params = useParams()
+  console.log(params)
+  const { job } = useLoaderData()
 
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
-  return <h1>EditJob Page</h1>;
-};
-export default EditJob;
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
+  return <h1>EditJob Page</h1>
+}
+export default EditJob
 ```
 
 #### Edit Job - Complete
 
 ```js
 export const action = async ({ request, params }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
 
   try {
-    await customFetch.patch(`/jobs/${params.id}`, data);
-    toast.success('Job edited successfully');
-    return redirect('/dashboard/all-jobs');
+    await customFetch.patch(`/jobs/${params.id}`, data)
+    toast.success('Job edited successfully')
+    return redirect('/dashboard/all-jobs')
   } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
+    toast.error(error.response.data.msg)
+    return error
   }
-};
+}
 
 const EditJob = () => {
-  const { job } = useLoaderData();
+  const { job } = useLoaderData()
 
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
 
   return (
     <Wrapper>
@@ -4577,10 +4577,10 @@ const EditJob = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default EditJob;
+export default EditJob
 ```
 
 #### Delete Job
@@ -4598,18 +4598,18 @@ Job.jsx
 pages/DeleteJob.jsx
 
 ```js
-import { redirect } from 'react-router-dom';
-import customFetch from '../utils/customFetch';
-import { toast } from 'react-toastify';
+import { redirect } from 'react-router-dom'
+import customFetch from '../utils/customFetch'
+import { toast } from 'react-toastify'
 
 export async function action({ params }) {
   try {
-    await customFetch.delete(`/jobs/${params.id}`);
-    toast.success('Job deleted successfully');
+    await customFetch.delete(`/jobs/${params.id}`)
+    toast.success('Job deleted successfully')
   } catch (error) {
-    toast.error(error.response.data.msg);
+    toast.error(error.response.data.msg)
   }
-  return redirect('/dashboard/all-jobs');
+  return redirect('/dashboard/all-jobs')
 }
 ```
 
@@ -4626,32 +4626,32 @@ import { action as deleteJobAction } from './pages/DeleteJob';
 pages/Admin.jsx
 
 ```js
-import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
+import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa'
 
-import { useLoaderData, redirect } from 'react-router-dom';
-import customFetch from '../utils/customFetch';
-import Wrapper from '../assets/wrappers/StatsContainer';
-import { toast } from 'react-toastify';
+import { useLoaderData, redirect } from 'react-router-dom'
+import customFetch from '../utils/customFetch'
+import Wrapper from '../assets/wrappers/StatsContainer'
+import { toast } from 'react-toastify'
 export const loader = async () => {
   try {
-    const response = await customFetch.get('/users/admin/app-stats');
-    return response.data;
+    const response = await customFetch.get('/users/admin/app-stats')
+    return response.data
   } catch (error) {
-    toast.error('You are not authorized to view this page');
-    return redirect('/dashboard');
+    toast.error('You are not authorized to view this page')
+    return redirect('/dashboard')
   }
-};
+}
 
 const Admin = () => {
-  const { users, jobs } = useLoaderData();
+  const { users, jobs } = useLoaderData()
 
   return (
     <Wrapper>
       <h2>admin page</h2>
     </Wrapper>
-  );
-};
-export default Admin;
+  )
+}
+export default Admin
 ```
 
 App.jsx
@@ -4672,10 +4672,10 @@ NavLinks.jsx
 ```js
 {
   links.map((link) => {
-    const { text, path, icon } = link;
-    const { role } = user;
-    if (role !== 'admin' && path === 'admin') return;
-  });
+    const { text, path, icon } = link
+    const { role } = user
+    if (role !== 'admin' && path === 'admin') return
+  })
 }
 ```
 
@@ -4687,7 +4687,7 @@ NavLinks.jsx
   StatItem.jsx
 
 ```js
-import Wrapper from '../assets/wrappers/StatItem';
+import Wrapper from '../assets/wrappers/StatItem'
 
 const StatItem = ({ count, title, icon, color, bcg }) => {
   return (
@@ -4698,19 +4698,19 @@ const StatItem = ({ count, title, icon, color, bcg }) => {
       </header>
       <h5 className='title'>{title}</h5>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default StatItem;
+export default StatItem
 ```
 
 Admin.jsx
 
 ```js
-import { StatItem } from '../components';
+import { StatItem } from '../components'
 
 const Admin = () => {
-  const { users, jobs } = useLoaderData();
+  const { users, jobs } = useLoaderData()
 
   return (
     <Wrapper>
@@ -4729,9 +4729,9 @@ const Admin = () => {
         icon={<FaCalendarCheck />}
       />
     </Wrapper>
-  );
-};
-export default Admin;
+  )
+}
+export default Admin
 ```
 
 #### Admin - CSS (optional)
@@ -4739,7 +4739,7 @@ export default Admin;
 wrappers/StatsContainer.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   display: grid;
@@ -4752,14 +4752,14 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1rem;
   }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 wrappers/StatItem.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.article`
   padding: 2rem;
@@ -4799,9 +4799,9 @@ const Wrapper = styled.article`
       color: ${(props) => props.color};
     }
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### Avatar Image
@@ -4815,13 +4815,13 @@ export default Wrapper;
 server.js
 
 ```js
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import path from 'path';
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import path from 'path'
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, './public')))
 ```
 
 - http://localhost:5100/imageName
@@ -4837,7 +4837,7 @@ models/UserModel.js
 const UserSchema = new mongoose.Schema({
   avatar: String,
   avatarPublicId: String,
-});
+})
 ```
 
 #### Profile Page - Structure
@@ -4845,18 +4845,18 @@ const UserSchema = new mongoose.Schema({
 pages/Profile.jsx
 
 ```js
-import { FormRow } from '../components';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { useOutletContext } from 'react-router-dom';
-import { useNavigation, Form } from 'react-router-dom';
-import customFetch from '../utils/customFetch';
-import { toast } from 'react-toastify';
+import { FormRow } from '../components'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { useOutletContext } from 'react-router-dom'
+import { useNavigation, Form } from 'react-router-dom'
+import customFetch from '../utils/customFetch'
+import { toast } from 'react-toastify'
 
 const Profile = () => {
-  const { user } = useOutletContext();
-  const { name, lastName, email, location } = user;
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const { user } = useOutletContext()
+  const { name, lastName, email, location } = user
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
   return (
     <Wrapper>
       <Form method='post' className='form' encType='multipart/form-data'>
@@ -4894,10 +4894,10 @@ const Profile = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
 ```
 
 #### Profile Page - Action
@@ -4906,22 +4906,22 @@ export default Profile;
 
 ```js
 export const action = async ({ request }) => {
-  const formData = await request.formData();
+  const formData = await request.formData()
 
-  const file = formData.get('avatar');
+  const file = formData.get('avatar')
   if (file && file.size > 500000) {
-    toast.error('Image size too large');
-    return null;
+    toast.error('Image size too large')
+    return null
   }
 
   try {
-    await customFetch.patch('/users/update-user', formData);
-    toast.success('Profile updated successfully');
+    await customFetch.patch('/users/update-user', formData)
+    toast.success('Profile updated successfully')
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
+    toast.error(error?.response?.data?.msg)
   }
-  return null;
-};
+  return null
+}
 ```
 
 #### Update User - Server
@@ -4936,35 +4936,35 @@ Multer is a popular middleware package for handling multipart/form-data in Node.
 - setup multer
 
 ```js
-import multer from 'multer';
+import multer from 'multer'
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // set the directory where uploaded files will be stored
-    cb(null, 'public/uploads');
+    cb(null, 'public/uploads')
   },
   filename: (req, file, cb) => {
-    const fileName = file.originalname;
+    const fileName = file.originalname
     // set the name of the uploaded file
-    cb(null, fileName);
+    cb(null, fileName)
   },
-});
-const upload = multer({ storage });
+})
+const upload = multer({ storage })
 
-export default upload;
+export default upload
 ```
 
 routes/userRouter.js
 
 ```js
-import upload from '../middleware/multerMiddleware.js';
+import upload from '../middleware/multerMiddleware.js'
 
 router.patch(
   '/update-user',
   upload.single('avatar'),
   validateUpdateUserInput,
   updateUser
-);
+)
 ```
 
 First, the multer package is imported.
@@ -5000,13 +5000,13 @@ npm i cloudinary@1.37.3
 server
 
 ```js
-import cloudinary from 'cloudinary';
+import cloudinary from 'cloudinary'
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
-});
+})
 ```
 
 #### Update User Controller
@@ -5014,26 +5014,26 @@ cloudinary.config({
 controllers/userController.js
 
 ```js
-import cloudinary from 'cloudinary';
-import { promises as fs } from 'fs';
+import cloudinary from 'cloudinary'
+import { promises as fs } from 'fs'
 
 export const updateUser = async (req, res) => {
-  const newUser = { ...req.body };
-  delete newUser.password;
+  const newUser = { ...req.body }
+  delete newUser.password
   if (req.file) {
-    const response = await cloudinary.v2.uploader.upload(req.file.path);
-    await fs.unlink(req.file.path);
-    newUser.avatar = response.secure_url;
-    newUser.avatarPublicId = response.public_id;
+    const response = await cloudinary.v2.uploader.upload(req.file.path)
+    await fs.unlink(req.file.path)
+    newUser.avatar = response.secure_url
+    newUser.avatarPublicId = response.public_id
   }
 
-  const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser);
+  const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser)
 
   if (req.file && updatedUser.avatarPublicId) {
-    await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId);
+    await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId)
   }
-  res.status(StatusCodes.OK).json({ msg: 'update user' });
-};
+  res.status(StatusCodes.OK).json({ msg: 'update user' })
+}
 ```
 
 #### Logout Container
@@ -5044,7 +5044,7 @@ export const updateUser = async (req, res) => {
     <img src={user.avatar} alt='avatar' className='img' />
   ) : (
     <FaUserCircle />
-  );
+  )
 }
 ```
 
@@ -5056,10 +5056,10 @@ export const updateUser = async (req, res) => {
 - make sure to add formBtn prop
 
 ```js
-import { useNavigation } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom'
 const SubmitBtn = ({ formBtn }) => {
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
   return (
     <button
       type='submit'
@@ -5068,9 +5068,9 @@ const SubmitBtn = ({ formBtn }) => {
     >
       {isSubmitting ? 'submitting...' : 'submit'}
     </button>
-  );
-};
-export default SubmitBtn;
+  )
+}
+export default SubmitBtn
 ```
 
 #### Test User
@@ -5200,31 +5200,31 @@ export const checkForTestUser = (req, res, next) => {
 - setup for test user and admin
 
 ```js
-import { readFile } from 'fs/promises';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-dotenv.config();
+import { readFile } from 'fs/promises'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 
-import Job from './models/JobModel.js';
-import User from './models/UserModel.js';
+import Job from './models/JobModel.js'
+import User from './models/UserModel.js'
 try {
-  await mongoose.connect(process.env.MONGO_URL);
+  await mongoose.connect(process.env.MONGO_URL)
   // const user = await User.findOne({ email: 'john@gmail.com' });
-  const user = await User.findOne({ email: 'test@test.com' });
+  const user = await User.findOne({ email: 'test@test.com' })
 
   const jsonJobs = JSON.parse(
     await readFile(new URL('./utils/mockData.json', import.meta.url))
-  );
+  )
   const jobs = jsonJobs.map((job) => {
-    return { ...job, createdBy: user._id };
-  });
-  await Job.deleteMany({ createdBy: user._id });
-  await Job.create(jobs);
-  console.log('Success!!!');
-  process.exit(0);
+    return { ...job, createdBy: user._id }
+  })
+  await Job.deleteMany({ createdBy: user._id })
+  await Job.create(jobs)
+  console.log('Success!!!')
+  process.exit(0)
 } catch (error) {
-  console.log(error);
-  process.exit(1);
+  console.log(error)
+  process.exit(1)
 }
 ```
 
@@ -5237,15 +5237,15 @@ try {
 jobController.js
 
 ```js
-import mongoose from 'mongoose';
-import day from 'dayjs';
+import mongoose from 'mongoose'
+import day from 'dayjs'
 
 export const showStats = async (req, res) => {
   const defaultStats = {
     pending: 22,
     interview: 11,
     declined: 4,
-  };
+  }
 
   let monthlyApplications = [
     {
@@ -5260,9 +5260,9 @@ export const showStats = async (req, res) => {
       date: 'Jul 23',
       count: 3,
     },
-  ];
-  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications });
-};
+  ]
+  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
+}
 ```
 
 #### Stats - Complete Server Functionality
@@ -5278,18 +5278,18 @@ export const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
     { $group: { _id: '$jobStatus', count: { $sum: 1 } } },
-  ]);
+  ])
   stats = stats.reduce((acc, curr) => {
-    const { _id: title, count } = curr;
-    acc[title] = count;
-    return acc;
-  }, {});
+    const { _id: title, count } = curr
+    acc[title] = count
+    return acc
+  }, {})
 
   const defaultStats = {
     pending: stats.pending || 0,
     interview: stats.interview || 0,
     declined: stats.declined || 0,
-  };
+  }
 
   let monthlyApplications = await Job.aggregate([
     { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
@@ -5301,24 +5301,24 @@ export const showStats = async (req, res) => {
     },
     { $sort: { '_id.year': -1, '_id.month': -1 } },
     { $limit: 6 },
-  ]);
+  ])
   monthlyApplications = monthlyApplications
     .map((item) => {
       const {
         _id: { year, month },
         count,
-      } = item;
+      } = item
 
       const date = day()
         .month(month - 1)
         .year(year)
-        .format('MMM YY');
-      return { date, count };
+        .format('MMM YY')
+      return { date, count }
     })
-    .reverse();
+    .reverse()
 
-  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications });
-};
+  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
+}
 ```
 
 #### Commentary
@@ -5327,7 +5327,7 @@ export const showStats = async (req, res) => {
 let stats = await Job.aggregate([
   { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
   { $group: { _id: '$jobStatus', count: { $sum: 1 } } },
-]);
+])
 ```
 
 let stats = await Job.aggregate([ ... ]); This line says we're going to perform an aggregation operation on the Job collection in MongoDB and save the result in a variable called stats. The await keyword is used to wait for the operation to finish before continuing, as the operation is asynchronous (i.e., it runs in the background).
@@ -5347,7 +5347,7 @@ let monthlyApplications = await Job.aggregate([
   },
   { $sort: { '_id.year': -1, '_id.month': -1 } },
   { $limit: 6 },
-]);
+])
 ```
 
 let monthlyApplications = await Job.aggregate([ ... ]); This line indicates that an aggregation operation will be performed on the Job collection in MongoDB. The result will be stored in the variable monthlyApplications. The await keyword ensures that the code waits for this operation to complete before proceeding, as it is an asynchronous operation.
@@ -5371,20 +5371,20 @@ So, monthlyApplications will be an array with up to 6 elements, each representin
 pages/Stats.jsx
 
 ```js
-import { ChartsContainer, StatsContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useLoaderData } from 'react-router-dom';
+import { ChartsContainer, StatsContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useLoaderData } from 'react-router-dom'
 export const loader = async () => {
   try {
-    const response = await customFetch.get('/jobs/stats');
-    return response.data;
+    const response = await customFetch.get('/jobs/stats')
+    return response.data
   } catch (error) {
-    return error;
+    return error
   }
-};
+}
 
 const Stats = () => {
-  const { defaultStats, monthlyApplications } = useLoaderData();
+  const { defaultStats, monthlyApplications } = useLoaderData()
   return (
     <>
       <StatsContainer defaultStats={defaultStats} />
@@ -5392,17 +5392,17 @@ const Stats = () => {
         <ChartsContainer data={monthlyApplications} />
       )}
     </>
-  );
-};
-export default Stats;
+  )
+}
+export default Stats
 ```
 
 #### Stats Container
 
 ```js
-import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa';
-import Wrapper from '../assets/wrappers/StatsContainer';
-import StatItem from './StatItem';
+import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa'
+import Wrapper from '../assets/wrappers/StatsContainer'
+import StatItem from './StatItem'
 const StatsContainer = ({ defaultStats }) => {
   const stats = [
     {
@@ -5426,29 +5426,29 @@ const StatsContainer = ({ defaultStats }) => {
       color: '#d66a6a',
       bcg: '#ffeeee',
     },
-  ];
+  ]
   return (
     <Wrapper>
       {stats.map((item) => {
-        return <StatItem key={item.title} {...item} />;
+        return <StatItem key={item.title} {...item} />
       })}
     </Wrapper>
-  );
-};
-export default StatsContainer;
+  )
+}
+export default StatsContainer
 ```
 
 #### ChartsContainer
 
 ```js
-import { useState } from 'react';
+import { useState } from 'react'
 
-import BarChart from './BarChart';
-import AreaChart from './AreaChart';
-import Wrapper from '../assets/wrappers/ChartsContainer';
+import BarChart from './BarChart'
+import AreaChart from './AreaChart'
+import Wrapper from '../assets/wrappers/ChartsContainer'
 
 const ChartsContainer = ({ data }) => {
-  const [barChart, setBarChart] = useState(true);
+  const [barChart, setBarChart] = useState(true)
 
   return (
     <Wrapper>
@@ -5458,10 +5458,10 @@ const ChartsContainer = ({ data }) => {
       </button>
       {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default ChartsContainer;
+export default ChartsContainer
 ```
 
 #### Charts
@@ -5485,7 +5485,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-} from 'recharts';
+} from 'recharts'
 
 const AreaChartComponent = ({ data }) => {
   return (
@@ -5498,10 +5498,10 @@ const AreaChartComponent = ({ data }) => {
         <Area type='monotone' dataKey='count' stroke='#2cb1bc' fill='#bef8fd' />
       </AreaChart>
     </ResponsiveContainer>
-  );
-};
+  )
+}
 
-export default AreaChartComponent;
+export default AreaChartComponent
 ```
 
 #### Bar Chart
@@ -5515,7 +5515,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts';
+} from 'recharts'
 
 const BarChartComponent = ({ data }) => {
   return (
@@ -5528,10 +5528,10 @@ const BarChartComponent = ({ data }) => {
         <Bar dataKey='count' fill='#2cb1bc' barSize={75} />
       </BarChart>
     </ResponsiveContainer>
-  );
-};
+  )
+}
 
-export default BarChartComponent;
+export default BarChartComponent
 ```
 
 #### Charts CSS (optional)
@@ -5539,7 +5539,7 @@ export default BarChartComponent;
 wrappers/ChartsContainer.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   margin-top: 4rem;
@@ -5556,9 +5556,9 @@ const Wrapper = styled.section`
     text-align: center;
     margin-bottom: 0.75rem;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
 ```
 
 #### Get All Jobs - Server
@@ -5569,23 +5569,23 @@ Query parameters, also known as query strings or URL parameters, are used to pas
 
 ```js
 export const getAllJobs = async (req, res) => {
-  const { search, jobStatus, jobType, sort } = req.query;
+  const { search, jobStatus, jobType, sort } = req.query
 
   const queryObject = {
     createdBy: req.user.userId,
-  };
+  }
 
   if (search) {
     queryObject.$or = [
       { position: { $regex: search, $options: 'i' } },
       { company: { $regex: search, $options: 'i' } },
-    ];
+    ]
   }
   if (jobStatus && jobStatus !== 'all') {
-    queryObject.jobStatus = jobStatus;
+    queryObject.jobStatus = jobStatus
   }
   if (jobType && jobType !== 'all') {
-    queryObject.jobType = jobType;
+    queryObject.jobType = jobType
   }
 
   const sortOptions = {
@@ -5593,27 +5593,24 @@ export const getAllJobs = async (req, res) => {
     oldest: 'createdAt',
     'a-z': 'position',
     'z-a': '-position',
-  };
+  }
 
-  const sortKey = sortOptions[sort] || sortOptions.newest;
+  const sortKey = sortOptions[sort] || sortOptions.newest
 
   // setup pagination
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 10;
-  const skip = (page - 1) * limit;
+  const page = Number(req.query.page) || 1
+  const limit = Number(req.query.limit) || 10
+  const skip = (page - 1) * limit
 
-  const jobs = await Job.find(queryObject)
-    .sort(sortKey)
-    .skip(skip)
-    .limit(limit);
+  const jobs = await Job.find(queryObject).sort(sortKey).skip(skip).limit(limit)
 
-  const totalJobs = await Job.countDocuments(queryObject);
-  const numOfPages = Math.ceil(totalJobs / limit);
+  const totalJobs = await Job.countDocuments(queryObject)
+  const numOfPages = Math.ceil(totalJobs / limit)
 
   res
     .status(StatusCodes.OK)
-    .json({ totalJobs, numOfPages, currentPage: page, jobs });
-};
+    .json({ totalJobs, numOfPages, currentPage: page, jobs })
+}
 ```
 
 #### Search Container
@@ -5621,11 +5618,11 @@ export const getAllJobs = async (req, res) => {
 - setup log in AllJobs loader
 
 ```js
-import { FormRow, FormRowSelect, SubmitBtn } from '.';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { Form, useSubmit, Link } from 'react-router-dom';
-import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants';
-import { useAllJobsContext } from '../pages/AllJobs';
+import { FormRow, FormRowSelect, SubmitBtn } from '.'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { Form, useSubmit, Link } from 'react-router-dom'
+import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants'
+import { useAllJobsContext } from '../pages/AllJobs'
 
 const SearchContainer = () => {
   return (
@@ -5662,10 +5659,10 @@ const SearchContainer = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default SearchContainer;
+export default SearchContainer
 ```
 
 #### All Jobs Loader
@@ -5673,51 +5670,51 @@ export default SearchContainer;
 AllJobs.jsx
 
 ```js
-import { toast } from 'react-toastify';
-import { JobsContainer, SearchContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useLoaderData } from 'react-router-dom';
-import { useContext, createContext } from 'react';
-const AllJobsContext = createContext();
+import { toast } from 'react-toastify'
+import { JobsContainer, SearchContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useLoaderData } from 'react-router-dom'
+import { useContext, createContext } from 'react'
+const AllJobsContext = createContext()
 export const loader = async ({ request }) => {
   try {
     const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
-    ]);
+    ])
 
     const { data } = await customFetch.get('/jobs', {
       params,
-    });
+    })
 
     return {
       data,
       searchValues: { ...params },
-    };
+    }
   } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
+    toast.error(error.response.data.msg)
+    return error
   }
-};
+}
 
 const AllJobs = () => {
-  const { data, searchValues } = useLoaderData();
+  const { data, searchValues } = useLoaderData()
 
   return (
     <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>
-  );
-};
-export default AllJobs;
+  )
+}
+export default AllJobs
 
-export const useAllJobsContext = () => useContext(AllJobsContext);
+export const useAllJobsContext = () => useContext(AllJobsContext)
 ```
 
 ```js
 const params = Object.fromEntries([
   ...new URL(request.url).searchParams.entries(),
-]);
+])
 ```
 
 new URL(request.url): This creates a new URL object by passing the request.url to the URL constructor. The URL object provides various methods and properties to work with URLs.
@@ -5741,16 +5738,16 @@ Putting it all together, the code retrieves the URL from the request.url propert
 SearchContainer.js
 
 ```js
-import { FormRow, FormRowSelect } from '.';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { Form, useSubmit, Link } from 'react-router-dom';
-import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants';
-import { useAllJobsContext } from '../pages/AllJobs';
+import { FormRow, FormRowSelect } from '.'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { Form, useSubmit, Link } from 'react-router-dom'
+import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants'
+import { useAllJobsContext } from '../pages/AllJobs'
 const SearchContainer = () => {
-  const { searchValues } = useAllJobsContext();
-  const { search, jobStatus, jobType, sort } = searchValues;
+  const { searchValues } = useAllJobsContext()
+  const { search, jobStatus, jobType, sort } = searchValues
 
-  const submit = useSubmit();
+  const submit = useSubmit()
 
   return (
     <Wrapper>
@@ -5764,7 +5761,7 @@ const SearchContainer = () => {
             name='search'
             defaultValue={search}
             onChange={(e) => {
-              submit(e.currentTarget.form);
+              submit(e.currentTarget.form)
             }}
           />
           <FormRowSelect
@@ -5773,7 +5770,7 @@ const SearchContainer = () => {
             list={['all', ...Object.values(JOB_STATUS)]}
             defaultValue={jobStatus}
             onChange={(e) => {
-              submit(e.currentTarget.form);
+              submit(e.currentTarget.form)
             }}
           />
           <FormRowSelect
@@ -5782,7 +5779,7 @@ const SearchContainer = () => {
             defaultValue={jobType}
             list={['all', ...Object.values(JOB_TYPE)]}
             onChange={(e) => {
-              submit(e.currentTarget.form);
+              submit(e.currentTarget.form)
             }}
           />
           <FormRowSelect
@@ -5790,7 +5787,7 @@ const SearchContainer = () => {
             defaultValue={sort}
             list={[...Object.values(JOB_SORT_BY)]}
             onChange={(e) => {
-              submit(e.currentTarget.form);
+              submit(e.currentTarget.form)
             }}
           />
           <Link to='/dashboard/all-jobs' className='btn form-btn delete-btn'>
@@ -5799,10 +5796,10 @@ const SearchContainer = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default SearchContainer;
+export default SearchContainer
 ```
 
 #### Debounce
@@ -5813,23 +5810,23 @@ In JavaScript, debounce is a way to limit how often a function gets called. It h
 
 ```js
 const debounce = (onChange) => {
-  let timeout;
+  let timeout
   return (e) => {
-    const form = e.currentTarget.form;
-    clearTimeout(timeout);
+    const form = e.currentTarget.form
+    clearTimeout(timeout)
     timeout = setTimeout(() => {
-      onChange(form);
-    }, 2000);
-  };
-};
-<FormRow
+      onChange(form)
+    }, 2000)
+  }
+}
+;<FormRow
   type='search'
   name='search'
   defaultValue={search}
   onChange={debounce((form) => {
-    submit(form);
+    submit(form)
   })}
-/>;
+/>
 ```
 
 #### Pagination - Setup
@@ -5839,20 +5836,20 @@ const debounce = (onChange) => {
 JobsContainer.jsx
 
 ```js
-import Job from './Job';
-import Wrapper from '../assets/wrappers/JobsContainer';
-import PageBtnContainer from './PageBtnContainer';
-import { useAllJobsContext } from '../pages/AllJobs';
+import Job from './Job'
+import Wrapper from '../assets/wrappers/JobsContainer'
+import PageBtnContainer from './PageBtnContainer'
+import { useAllJobsContext } from '../pages/AllJobs'
 
 const JobsContainer = () => {
-  const { data } = useAllJobsContext();
-  const { jobs, totalJobs, numOfPages } = data;
+  const { data } = useAllJobsContext()
+  const { jobs, totalJobs, numOfPages } = data
   if (jobs.length === 0) {
     return (
       <Wrapper>
         <h2>No jobs to display...</h2>
       </Wrapper>
-    );
+    )
   }
 
   return (
@@ -5862,47 +5859,47 @@ const JobsContainer = () => {
       </h5>
       <div className='jobs'>
         {jobs.map((job) => {
-          return <Job key={job._id} {...job} />;
+          return <Job key={job._id} {...job} />
         })}
       </div>
       {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
-  );
-};
+  )
+}
 
-export default JobsContainer;
+export default JobsContainer
 ```
 
 #### Basic PageBtnContainer
 
 ```js
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
-import Wrapper from '../assets/wrappers/PageBtnContainer';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { useAllJobsContext } from '../pages/AllJobs';
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
+import Wrapper from '../assets/wrappers/PageBtnContainer'
+import { useLocation, Link, useNavigate } from 'react-router-dom'
+import { useAllJobsContext } from '../pages/AllJobs'
 
 const PageBtnContainer = () => {
   const {
     data: { numOfPages, currentPage },
-  } = useAllJobsContext();
-  const { search, pathname } = useLocation();
-  const navigate = useNavigate();
-  const pages = Array.from({ length: numOfPages }, (_, index) => index + 1);
+  } = useAllJobsContext()
+  const { search, pathname } = useLocation()
+  const navigate = useNavigate()
+  const pages = Array.from({ length: numOfPages }, (_, index) => index + 1)
 
   const handlePageChange = (pageNumber) => {
-    const searchParams = new URLSearchParams(search);
-    searchParams.set('page', pageNumber);
-    navigate(`${pathname}?${searchParams.toString()}`);
-  };
+    const searchParams = new URLSearchParams(search)
+    searchParams.set('page', pageNumber)
+    navigate(`${pathname}?${searchParams.toString()}`)
+  }
 
   return (
     <Wrapper>
       <button
         className='btn prev-btn'
         onClick={() => {
-          let prevPage = currentPage - 1;
-          if (prevPage < 1) prevPage = numOfPages;
-          handlePageChange(prevPage);
+          let prevPage = currentPage - 1
+          if (prevPage < 1) prevPage = numOfPages
+          handlePageChange(prevPage)
         }}
       >
         <HiChevronDoubleLeft />
@@ -5922,41 +5919,41 @@ const PageBtnContainer = () => {
       <button
         className='btn next-btn'
         onClick={() => {
-          let nextPage = currentPage + 1;
-          if (nextPage > numOfPages) nextPage = 1;
-          handlePageChange(nextPage);
+          let nextPage = currentPage + 1
+          if (nextPage > numOfPages) nextPage = 1
+          handlePageChange(nextPage)
         }}
       >
         next
         <HiChevronDoubleRight />
       </button>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default PageBtnContainer;
+export default PageBtnContainer
 ```
 
 #### Complex - PageBtnContainer
 
 ```js
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
-import Wrapper from '../assets/wrappers/PageBtnContainer';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { useAllJobsContext } from '../pages/AllJobs';
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi'
+import Wrapper from '../assets/wrappers/PageBtnContainer'
+import { useLocation, Link, useNavigate } from 'react-router-dom'
+import { useAllJobsContext } from '../pages/AllJobs'
 
 const PageBtnContainer = () => {
   const {
     data: { numOfPages, currentPage },
-  } = useAllJobsContext();
-  const { search, pathname } = useLocation();
-  const navigate = useNavigate();
+  } = useAllJobsContext()
+  const { search, pathname } = useLocation()
+  const navigate = useNavigate()
 
   const handlePageChange = (pageNumber) => {
-    const searchParams = new URLSearchParams(search);
-    searchParams.set('page', pageNumber);
-    navigate(`${pathname}?${searchParams.toString()}`);
-  };
+    const searchParams = new URLSearchParams(search)
+    searchParams.set('page', pageNumber)
+    navigate(`${pathname}?${searchParams.toString()}`)
+  }
 
   const addPageButton = ({ pageNumber, activeClass }) => {
     return (
@@ -5967,50 +5964,50 @@ const PageBtnContainer = () => {
       >
         {pageNumber}
       </button>
-    );
-  };
+    )
+  }
 
   const renderPageButtons = () => {
-    const pageButtons = [];
+    const pageButtons = []
 
     // Add the first page button
     pageButtons.push(
       addPageButton({ pageNumber: 1, activeClass: currentPage === 1 })
-    );
+    )
     // Add the dots before the current page if there are more than 3 pages
     if (currentPage > 3) {
       pageButtons.push(
         <span className='page-btn dots' key='dots-1'>
           ....
         </span>
-      );
+      )
     }
     // one before current page
     if (currentPage !== 1 && currentPage !== 2) {
       pageButtons.push(
         addPageButton({ pageNumber: currentPage - 1, activeClass: false })
-      );
+      )
     }
 
     // Add the current page button
     if (currentPage !== 1 && currentPage !== numOfPages) {
       pageButtons.push(
         addPageButton({ pageNumber: currentPage, activeClass: true })
-      );
+      )
     }
 
     // one after current page
     if (currentPage !== numOfPages && currentPage !== numOfPages - 1) {
       pageButtons.push(
         addPageButton({ pageNumber: currentPage + 1, activeClass: false })
-      );
+      )
     }
     if (currentPage < numOfPages - 2) {
       pageButtons.push(
         <span className=' page-btn dots' key='dots+1'>
           ....
         </span>
-      );
+      )
     }
 
     // Add the last page button
@@ -6019,19 +6016,19 @@ const PageBtnContainer = () => {
         pageNumber: numOfPages,
         activeClass: currentPage === numOfPages,
       })
-    );
+    )
 
-    return pageButtons;
-  };
+    return pageButtons
+  }
 
   return (
     <Wrapper>
       <button
         className='prev-btn'
         onClick={() => {
-          let prevPage = currentPage - 1;
-          if (prevPage < 1) prevPage = numOfPages;
-          handlePageChange(prevPage);
+          let prevPage = currentPage - 1
+          if (prevPage < 1) prevPage = numOfPages
+          handlePageChange(prevPage)
         }}
       >
         <HiChevronDoubleLeft />
@@ -6041,19 +6038,19 @@ const PageBtnContainer = () => {
       <button
         className='btn next-btn'
         onClick={() => {
-          let nextPage = currentPage + 1;
-          if (nextPage > numOfPages) nextPage = 1;
-          handlePageChange(nextPage);
+          let nextPage = currentPage + 1
+          if (nextPage > numOfPages) nextPage = 1
+          handlePageChange(nextPage)
         }}
       >
         next
         <HiChevronDoubleRight />
       </button>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default PageBtnContainer;
+export default PageBtnContainer
 ```
 
 #### PageBtnContainer CSS (optional)
@@ -6061,7 +6058,7 @@ export default PageBtnContainer;
 wrappers/PageBtnContainer.js
 
 ```js
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.section`
   height: 6rem;
@@ -6118,8 +6115,8 @@ cursor:pointer;
   place-items:center;
   cursor:text;
 }
-`;
-export default Wrapper;
+`
+export default Wrapper
 ```
 
 #### Local Build
@@ -6140,8 +6137,8 @@ cd client && npm run build
 
 ```js
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
-});
+  res.sendFile(path.resolve(__dirname, './public', 'index.html'))
+})
 ```
 
 #### Deploy On Render
@@ -6167,11 +6164,11 @@ package.json
 server.js
 
 ```js
-app.use(express.static(path.resolve(__dirname, './client/dist')));
+app.use(express.static(path.resolve(__dirname, './client/dist')))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
-});
+  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'))
+})
 ```
 
 #### Test Locally
@@ -6201,44 +6198,44 @@ npm i datauri@4.1.0
 middleware/multerMiddleware.js
 
 ```js
-import multer from 'multer';
-import DataParser from 'datauri/parser.js';
-import path from 'path';
+import multer from 'multer'
+import DataParser from 'datauri/parser.js'
+import path from 'path'
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const storage = multer.memoryStorage()
+const upload = multer({ storage })
 
-const parser = new DataParser();
+const parser = new DataParser()
 
 export const formatImage = (file) => {
-  const fileExtension = path.extname(file.originalname).toString();
-  return parser.format(fileExtension, file.buffer).content;
-};
+  const fileExtension = path.extname(file.originalname).toString()
+  return parser.format(fileExtension, file.buffer).content
+}
 
-export default upload;
+export default upload
 ```
 
 controller/userController.js
 
 ```js
-import { formatImage } from '../middleware/multerMiddleware.js';
+import { formatImage } from '../middleware/multerMiddleware.js'
 
 export const updateUser = async (req, res) => {
-  const newUser = { ...req.body };
-  delete newUser.password;
+  const newUser = { ...req.body }
+  delete newUser.password
   if (req.file) {
-    const file = formatImage(req.file);
-    const response = await cloudinary.v2.uploader.upload(file);
-    newUser.avatar = response.secure_url;
-    newUser.avatarPublicId = response.public_id;
+    const file = formatImage(req.file)
+    const response = await cloudinary.v2.uploader.upload(file)
+    newUser.avatar = response.secure_url
+    newUser.avatarPublicId = response.public_id
   }
-  const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser);
+  const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser)
 
   if (req.file && updatedUser.avatarPublicId) {
-    await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId);
+    await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId)
   }
-  res.status(StatusCodes.OK).json({ msg: 'update user' });
-};
+  res.status(StatusCodes.OK).json({ msg: 'update user' })
+}
 ```
 
 #### Setup Global Loading
@@ -6250,21 +6247,21 @@ components/Loading.jsx
 
 ```js
 const Loading = () => {
-  return <div className='loading'></div>;
-};
+  return <div className='loading'></div>
+}
 
-export default Loading;
+export default Loading
 ```
 
 DashboardLayout.jsx
 
 ```js
-import { useNavigation } from 'react-router-dom';
-import { Loading } from '../components';
+import { useNavigation } from 'react-router-dom'
+import { Loading } from '../components'
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
-  const navigation = useNavigation();
-  const isPageLoading = navigation.state === 'loading';
+  const navigation = useNavigation()
+  const isPageLoading = navigation.state === 'loading'
 
   return (
     <Wrapper>
@@ -6274,8 +6271,8 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
       </div>
       ...
     </Wrapper>
-  );
-};
+  )
+}
 ```
 
 #### React Query
@@ -6293,8 +6290,8 @@ npm i @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6
 App.jsx
 
 ```js
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -6302,7 +6299,7 @@ const queryClient = new QueryClient({
       staleTime: 1000 * 60 * 5,
     },
   },
-});
+})
 
 const App = () => {
   return (
@@ -6310,8 +6307,8 @@ const App = () => {
       <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  );
-};
+  )
+}
 ```
 
 #### Page Error Element
@@ -6319,23 +6316,23 @@ const App = () => {
 - create components/ErrorElement
 
 ```js
-import { useRouteError } from 'react-router-dom';
+import { useRouteError } from 'react-router-dom'
 
 const Error = () => {
-  const error = useRouteError();
-  console.log(error);
-  return <h4>There was an error...</h4>;
-};
-export default ErrorElement;
+  const error = useRouteError()
+  console.log(error)
+  return <h4>There was an error...</h4>
+}
+export default ErrorElement
 ```
 
 Stats.jsx
 
 ```js
 export const loader = async () => {
-  const response = await customFetch.get('/jobs/stats');
-  return response.data;
-};
+  const response = await customFetch.get('/jobs/stats')
+  return response.data
+}
 ```
 
 App.jsx
@@ -6365,25 +6362,25 @@ App.jsx
 Stats.jsx
 
 ```js
-import { ChartsContainer, StatsContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useLoaderData } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { ChartsContainer, StatsContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useLoaderData } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
 
 export const loader = async () => {
-  return null;
-};
+  return null
+}
 
 const Stats = () => {
   const response = useQuery({
     queryKey: ['stats'],
     queryFn: () => customFetch.get('/jobs/stats'),
-  });
-  console.log(response);
+  })
+  console.log(response)
   if (response.isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1>Loading...</h1>
   }
-  return <h1>react query</h1>;
+  return <h1>react query</h1>
   return (
     <>
       <StatsContainer defaultStats={defaultStats} />
@@ -6391,16 +6388,16 @@ const Stats = () => {
         <ChartsContainer data={monthlyApplications} />
       )}
     </>
-  );
-};
-export default Stats;
+  )
+}
+export default Stats
 ```
 
 ```js
 const data = useQuery({
   queryKey: ['stats'],
   queryFn: () => customFetch.get('/jobs/stats'),
-});
+})
 ```
 
 const data = useQuery({ ... });: This line declares a constant variable named data and assigns it the result of the useQuery hook. The useQuery hook is provided by React Query and is used to perform data fetching.
@@ -6417,22 +6414,22 @@ customFetch.get('/jobs/stats'): This line is making an HTTP GET request to the /
 const statsQuery = {
   queryKey: ['stats'],
   queryFn: async () => {
-    const response = await customFetch.get('/jobs/stats');
-    return response.data;
+    const response = await customFetch.get('/jobs/stats')
+    return response.data
   },
-};
+}
 
 export const loader = async () => {
-  return null;
-};
+  return null
+}
 
 const Stats = () => {
-  const { isLoading, isError, data } = useQuery(statsQuery);
+  const { isLoading, isError, data } = useQuery(statsQuery)
 
-  if (isLoading) return <h4>Loading...</h4>;
-  if (isError) return <h4>Error...</h4>;
+  if (isLoading) return <h4>Loading...</h4>
+  if (isError) return <h4>Error...</h4>
   // after loading/error or ?.
-  const { defaultStats, monthlyApplications } = data;
+  const { defaultStats, monthlyApplications } = data
 
   return (
     <>
@@ -6441,9 +6438,9 @@ const Stats = () => {
         <ChartsContainer data={monthlyApplications} />
       )}
     </>
-  );
-};
-export default Stats;
+  )
+}
+export default Stats
 ```
 
 #### React Query in Stats Loader
@@ -6462,26 +6459,26 @@ App.jsx
 Stats.jsx
 
 ```js
-import { ChartsContainer, StatsContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useQuery } from '@tanstack/react-query';
+import { ChartsContainer, StatsContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useQuery } from '@tanstack/react-query'
 
 const statsQuery = {
   queryKey: ['stats'],
   queryFn: async () => {
-    const response = await customFetch.get('/jobs/statss');
-    return response.data;
+    const response = await customFetch.get('/jobs/statss')
+    return response.data
   },
-};
+}
 
 export const loader = (queryClient) => async () => {
-  const data = await queryClient.ensureQueryData(statsQuery);
-  return data;
-};
+  const data = await queryClient.ensureQueryData(statsQuery)
+  return data
+}
 
 const Stats = () => {
-  const { data } = useQuery(statsQuery);
-  const { defaultStats, monthlyApplications } = data;
+  const { data } = useQuery(statsQuery)
+  const { defaultStats, monthlyApplications } = data
 
   return (
     <>
@@ -6490,9 +6487,9 @@ const Stats = () => {
         <ChartsContainer data={monthlyApplications} />
       )}
     </>
-  );
-};
-export default Stats;
+  )
+}
+export default Stats
 ```
 
 #### React Query for Current User
@@ -6503,22 +6500,22 @@ DashboardLayout.jsx
 const userQuery = {
   queryKey: ['user'],
   queryFn: async () => {
-    const { data } = await customFetch('/users/current-user');
-    return data;
+    const { data } = await customFetch('/users/current-user')
+    return data
   },
-};
+}
 
 export const loader = (queryClient) => async () => {
   try {
-    return await queryClient.ensureQueryData(userQuery);
+    return await queryClient.ensureQueryData(userQuery)
   } catch (error) {
-    return redirect('/');
+    return redirect('/')
   }
-};
+}
 
 const Dashboard = ({ prefersDarkMode, queryClient }) => {
-  const { user } = useQuery(userQuery)?.data;
-};
+  const { user } = useQuery(userQuery)?.data
+}
 ```
 
 #### Invalidate Queries
@@ -6529,29 +6526,29 @@ Login.jsx
 export const action =
   (queryClient) =>
   async ({ request }) => {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
+    const formData = await request.formData()
+    const data = Object.fromEntries(formData)
     try {
-      await axios.post('/api/v1/auth/login', data);
-      queryClient.invalidateQueries();
-      toast.success('Login successful');
-      return redirect('/dashboard');
+      await axios.post('/api/v1/auth/login', data)
+      queryClient.invalidateQueries()
+      toast.success('Login successful')
+      return redirect('/dashboard')
     } catch (error) {
-      toast.error(error.response.data.msg);
-      return error;
+      toast.error(error.response.data.msg)
+      return error
     }
-  };
+  }
 ```
 
 DashboardLayout.jsx
 
 ```js
 const logoutUser = async () => {
-  navigate('/');
-  await customFetch.get('/auth/logout');
-  queryClient.invalidateQueries();
-  toast.success('Logging out...');
-};
+  navigate('/')
+  await customFetch.get('/auth/logout')
+  queryClient.invalidateQueries()
+  toast.success('Logging out...')
+}
 ```
 
 Profile.jsx
@@ -6560,22 +6557,22 @@ Profile.jsx
 export const action =
   (queryClient) =>
   async ({ request }) => {
-    const formData = await request.formData();
-    const file = formData.get('avatar');
+    const formData = await request.formData()
+    const file = formData.get('avatar')
     if (file && file.size > 500000) {
-      toast.error('Image size too large');
-      return null;
+      toast.error('Image size too large')
+      return null
     }
     try {
-      await customFetch.patch('/users/update-user', formData);
-      queryClient.invalidateQueries(['user']);
-      toast.success('Profile updated successfully');
-      return redirect('/dashboard');
+      await customFetch.patch('/users/update-user', formData)
+      queryClient.invalidateQueries(['user'])
+      toast.success('Profile updated successfully')
+      return redirect('/dashboard')
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
-      return null;
+      toast.error(error?.response?.data?.msg)
+      return null
     }
-  };
+  }
 ```
 
 #### All Jobs Query
@@ -6583,16 +6580,16 @@ export const action =
 AllJobs.jsx
 
 ```js
-import { toast } from 'react-toastify';
-import { JobsContainer, SearchContainer } from '../components';
-import customFetch from '../utils/customFetch';
-import { useLoaderData } from 'react-router-dom';
-import { useContext, createContext } from 'react';
-import { useQuery } from '@tanstack/react-query';
-const AllJobsContext = createContext();
+import { toast } from 'react-toastify'
+import { JobsContainer, SearchContainer } from '../components'
+import customFetch from '../utils/customFetch'
+import { useLoaderData } from 'react-router-dom'
+import { useContext, createContext } from 'react'
+import { useQuery } from '@tanstack/react-query'
+const AllJobsContext = createContext()
 
 const allJobsQuery = (params) => {
-  const { search, jobStatus, jobType, sort, page } = params;
+  const { search, jobStatus, jobType, sort, page } = params
   return {
     queryKey: [
       'jobs',
@@ -6605,36 +6602,36 @@ const allJobsQuery = (params) => {
     queryFn: async () => {
       const { data } = await customFetch.get('/jobs', {
         params,
-      });
-      return data;
+      })
+      return data
     },
-  };
-};
+  }
+}
 
 export const loader =
   (queryClient) =>
   async ({ request }) => {
     const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
-    ]);
+    ])
 
-    await queryClient.ensureQueryData(allJobsQuery(params));
-    return { searchValues: { ...params } };
-  };
+    await queryClient.ensureQueryData(allJobsQuery(params))
+    return { searchValues: { ...params } }
+  }
 
 const AllJobs = () => {
-  const { searchValues } = useLoaderData();
-  const { data } = useQuery(allJobsQuery(searchValues));
+  const { searchValues } = useLoaderData()
+  const { data } = useQuery(allJobsQuery(searchValues))
   return (
     <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>
-  );
-};
-export default AllJobs;
+  )
+}
+export default AllJobs
 
-export const useAllJobsContext = () => useContext(AllJobsContext);
+export const useAllJobsContext = () => useContext(AllJobsContext)
 ```
 
 #### Invalidate Jobs
@@ -6645,18 +6642,18 @@ AddJob.jsx
 export const action =
   (queryClient) =>
   async ({ request }) => {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
+    const formData = await request.formData()
+    const data = Object.fromEntries(formData)
     try {
-      await customFetch.post('/jobs', data);
-      queryClient.invalidateQueries(['jobs']);
-      toast.success('Job added successfully ');
-      return redirect('all-jobs');
+      await customFetch.post('/jobs', data)
+      queryClient.invalidateQueries(['jobs'])
+      toast.success('Job added successfully ')
+      return redirect('all-jobs')
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
-      return error;
+      toast.error(error?.response?.data?.msg)
+      return error
     }
-  };
+  }
 ```
 
 EditJob.jsx
@@ -6665,18 +6662,18 @@ EditJob.jsx
 export const action =
   (queryClient) =>
   async ({ request, params }) => {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
+    const formData = await request.formData()
+    const data = Object.fromEntries(formData)
     try {
-      await customFetch.patch(`/jobs/${params.id}`, data);
-      queryClient.invalidateQueries(['jobs']);
-      toast.success('Job edited successfully');
-      return redirect('/dashboard/all-jobs');
+      await customFetch.patch(`/jobs/${params.id}`, data)
+      queryClient.invalidateQueries(['jobs'])
+      toast.success('Job edited successfully')
+      return redirect('/dashboard/all-jobs')
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
-      return error;
+      toast.error(error?.response?.data?.msg)
+      return error
     }
-  };
+  }
 ```
 
 DeleteJob.jsx
@@ -6686,73 +6683,73 @@ export const action =
   (queryClient) =>
   async ({ params }) => {
     try {
-      await customFetch.delete(`/jobs/${params.id}`);
-      queryClient.invalidateQueries(['jobs']);
-      toast.success('Job deleted successfully');
+      await customFetch.delete(`/jobs/${params.id}`)
+      queryClient.invalidateQueries(['jobs'])
+      toast.success('Job deleted successfully')
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
+      toast.error(error?.response?.data?.msg)
     }
-    return redirect('/dashboard/all-jobs');
-  };
+    return redirect('/dashboard/all-jobs')
+  }
 ```
 
 #### Edit Job Loader
 
 ```js
-import { FormRow, FormRowSelect, SubmitBtn } from '../components';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { useLoaderData, useParams } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
-import { Form, redirect } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import customFetch from '../utils/customFetch';
-import { useQuery } from '@tanstack/react-query';
+import { FormRow, FormRowSelect, SubmitBtn } from '../components'
+import Wrapper from '../assets/wrappers/DashboardFormPage'
+import { useLoaderData, useParams } from 'react-router-dom'
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants'
+import { Form, redirect } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import customFetch from '../utils/customFetch'
+import { useQuery } from '@tanstack/react-query'
 
 const singleJobQuery = (id) => {
   return {
     queryKey: ['job', id],
     queryFn: async () => {
-      const { data } = await customFetch.get(`/jobs/${id}`);
-      return data;
+      const { data } = await customFetch.get(`/jobs/${id}`)
+      return data
     },
-  };
-};
+  }
+}
 
 export const loader =
   (queryClient) =>
   async ({ params }) => {
     try {
-      await queryClient.ensureQueryData(singleJobQuery(params.id));
-      return params.id;
+      await queryClient.ensureQueryData(singleJobQuery(params.id))
+      return params.id
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
-      return redirect('/dashboard/all-jobs');
+      toast.error(error?.response?.data?.msg)
+      return redirect('/dashboard/all-jobs')
     }
-  };
+  }
 
 export const action =
   (queryClient) =>
   async ({ request, params }) => {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
+    const formData = await request.formData()
+    const data = Object.fromEntries(formData)
     try {
-      await customFetch.patch(`/jobs/${params.id}`, data);
-      queryClient.invalidateQueries(['jobs']);
+      await customFetch.patch(`/jobs/${params.id}`, data)
+      queryClient.invalidateQueries(['jobs'])
 
-      toast.success('Job edited successfully');
-      return redirect('/dashboard/all-jobs');
+      toast.success('Job edited successfully')
+      return redirect('/dashboard/all-jobs')
     } catch (error) {
-      toast.error(error?.response?.data?.msg);
-      return error;
+      toast.error(error?.response?.data?.msg)
+      return error
     }
-  };
+  }
 
 const EditJob = () => {
-  const id = useLoaderData();
+  const id = useLoaderData()
 
   const {
     data: { job },
-  } = useQuery(singleJobQuery(id));
+  } = useQuery(singleJobQuery(id))
 
   return (
     <Wrapper>
@@ -6783,9 +6780,9 @@ const EditJob = () => {
         </div>
       </Form>
     </Wrapper>
-  );
-};
-export default EditJob;
+  )
+}
+export default EditJob
 ```
 
 #### Axios Interceptors
@@ -6848,23 +6845,23 @@ Need: This package is necessary to manage and regulate the number of requests ma
 server.js
 
 ```js
-import helmet from 'helmet';
-import mongoSanitize from 'express-mongo-sanitize';
+import helmet from 'helmet'
+import mongoSanitize from 'express-mongo-sanitize'
 
-app.use(helmet());
-app.use(mongoSanitize());
+app.use(helmet())
+app.use(mongoSanitize())
 ```
 
 routes/authRouter.js
 
 ```js
-import rateLimiter from 'express-rate-limit';
+import rateLimiter from 'express-rate-limit'
 
 const apiLimiter = rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 15,
   message: { msg: 'IP rate limit exceeded, retry in 15 minutes.' },
-});
-router.post('/register', apiLimiter, validateRegisterInput, register);
-router.post('/login', apiLimiter, validateLoginInput, login);
+})
+router.post('/register', apiLimiter, validateRegisterInput, register)
+router.post('/login', apiLimiter, validateLoginInput, login)
 ```

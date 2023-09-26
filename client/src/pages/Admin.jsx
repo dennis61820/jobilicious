@@ -8,10 +8,10 @@ import { StatItem } from '../components'
 
 export const loader = async () => {
   try {
-    const response = await customFetch('/users/admin/app-stats')
+    const response = await customFetch.get('/users/admin/app-stats')
     return response.data
   } catch (error) {
-    toast.error(error?.response?.data?.msg)
+    toast.error('You are not authorized to view this page')
     return redirect('/dashboard')
   }
 }
@@ -33,7 +33,7 @@ const Admin = () => {
         count={jobs}
         color='#647acb'
         bgc='#e0e8f9'
-        icn={<FaCalendarCheck />}
+        icon={<FaCalendarCheck />}
       />
     </Wrapper>
   )
