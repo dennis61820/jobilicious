@@ -1,14 +1,14 @@
-import { FormRow } from '../components'
+import { FormRow, SubmitBtn } from '../components'
 import Wrapper from '../assets/wrappers/DashboardFormPage'
 import { useOutletContext } from 'react-router-dom'
-import { useNavigation, Form } from 'react-router-dom'
+import { Form } from 'react-router-dom'
 import customFetch from '../utils/customFetch'
 import { toast } from 'react-toastify'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const file = formData.get('avatar')
-  console.log(file)
+  console.log(file.size)
   if (file && file.size > 500000) {
     toast.error('Image needs to be less than 500k.')
     return null
@@ -25,12 +25,10 @@ export const action = async ({ request }) => {
 const Profile = () => {
   const { user } = useOutletContext()
   const { name, lastName, email, location } = user
-  const navigation = useNavigation()
-  const isSubmitting = navigation.state === 'submitting'
 
   return (
     <Wrapper>
-      <Form method='post' className='form'>
+      <Form method='post' className='form' encType='multipart/form-data'>
         <h4 className='form-title'>profile</h4>
         <div className='form-center'>
           <div className='form-row'>
@@ -41,7 +39,6 @@ const Profile = () => {
               type='file'
               name='avatar'
               id='avatar'
-              encType='multipart/form-data'
               className='form-input'
               accept='image/*'
             />
@@ -55,13 +52,8 @@ const Profile = () => {
           />
           <FormRow type='email' name='email' defaultValue={email} />
           <FormRow type='text' name='location' defaultValue={location} />
-          <button
-            className='btn btn-block form-btn'
-            type='submit'
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'submitting...' : 'save changes'}
-          </button>
+
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>

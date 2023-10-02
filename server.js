@@ -6,7 +6,7 @@ const app = express()
 import morgan from 'morgan'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
-import { v2 as cloudinary } from 'cloudinary'
+import cloudinary from 'cloudinary'
 import helmet from 'helmet'
 import mongoSanitize from 'express-mongo-sanitize'
 
