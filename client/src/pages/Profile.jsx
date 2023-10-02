@@ -8,11 +8,13 @@ import { toast } from 'react-toastify'
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const file = formData.get('avatar')
+  console.log(file)
   if (file && file.size > 500000) {
     toast.error('Image needs to be less than 500k.')
+    return null
   }
   try {
-    await customFetch.patch('/users/update-users', formData)
+    await customFetch.patch('/users/update-user', formData)
     toast.success('Profile updated')
   } catch (error) {
     toast.error(error?.response?.data?.msg)
@@ -32,17 +34,14 @@ const Profile = () => {
         <h4 className='form-title'>profile</h4>
         <div className='form-center'>
           <div className='form-row'>
-            <label
-              htmlFor='avatar'
-              encType='multipart/form-data'
-              className='form-label'
-            >
+            <label htmlFor='avatar' className='form-label'>
               Select an image file (max 0.5 MB):
             </label>
             <input
               type='file'
               name='avatar'
               id='avatar'
+              encType='multipart/form-data'
               className='form-input'
               accept='image/*'
             />

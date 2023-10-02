@@ -5020,6 +5020,7 @@ import { promises as fs } from 'fs'
 export const updateUser = async (req, res) => {
   const newUser = { ...req.body }
   delete newUser.password
+
   if (req.file) {
     const response = await cloudinary.v2.uploader.upload(req.file.path)
     await fs.unlink(req.file.path)
