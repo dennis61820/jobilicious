@@ -1,5 +1,5 @@
 import customFetch from '../utils/customFetch'
-import { Link, Form, redirect } from 'react-router-dom'
+import { Link, Form, redirect, useNavigate } from 'react-router-dom'
 import { Logo, FormRow, SubmitBtn } from '../components'
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage'
 import { toast } from 'react-toastify'
@@ -18,6 +18,21 @@ export const action = async ({ request }) => {
 }
 
 const Login = () => {
+  const navigate = useNavigate()
+  const loginDemoUser = async () => {
+    const data = {
+      email: 'test@test.com',
+      password: 'secret123',
+    }
+    try {
+      await customFetch.post('/auth/login', data)
+      toast.success('enjoy the demo')
+      navigate('/dashboard')
+    } catch (error) {
+      toast.error(error?.response?.data?.msg)
+    }
+  }
+
   return (
     <Wrapper>
       <Form method='post' className='form'>
@@ -26,7 +41,7 @@ const Login = () => {
         <FormRow type='email' name='email' />
         <FormRow type='password' name='password' />
         <SubmitBtn formBtn />
-        <button className='btn btn-block' type='button'>
+        <button className='btn btn-block' type='button' onClick={loginDemoUser}>
           explore the app
         </button>
         <p>
