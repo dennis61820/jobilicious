@@ -57,7 +57,6 @@ export const showStats = async (req, res) => {
     acc[title] = count
     return acc
   }, {})
-  console.log(stats)
 
   const defaultStats = {
     pending: stats.pending || 0,
@@ -75,5 +74,20 @@ export const showStats = async (req, res) => {
     { $sort: { '_id.year': -1, '_id.month': -1 } },
     { $limit: 6 },
   ])
+  monthlyApplications = monthlyApplications
+    .map((item) => {
+      const {
+        _id: { year, month },
+        count,
+      } = item
+
+      const date = day()
+        .month(month - 1)
+        .year(year)
+        .format('MMM YY')
+      return { date, count }
+    })
+    .reverse()
+
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
 }
