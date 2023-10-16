@@ -5885,7 +5885,9 @@ const PageBtnContainer = () => {
   } = useAllJobsContext()
   const { search, pathname } = useLocation()
   const navigate = useNavigate()
-  const pages = Array.from({ length: numOfPages }, (_, index) => index + 1)
+  const pages = Array.from({ length: numOfPages }, (_, index) => {
+    return index + 1
+  })
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search)
