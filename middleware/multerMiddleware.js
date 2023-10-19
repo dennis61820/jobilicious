@@ -9,8 +9,8 @@ const upload = multer({ storage })
 const parser = new DataParser()
 
 export const formatImage = (file) => {
-  const fileExtention = path.extname(file.orignalname).toString()
-  return parser.format(fileExtention, file.buffer).content
+  const fileExtension = path.extname(file.originalname).toString()
+  return parser.format(fileExtension, file.buffer).content
 }
 
 export default upload
