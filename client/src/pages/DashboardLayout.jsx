@@ -20,8 +20,8 @@ export const loader = async () => {
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
   const { user } = useLoaderData()
   const navigate = useNavigate()
-  const navigaton = useNavigation()
-  const isLoading = navigaton.state === 'loading'
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
 
   const [showSidebar, setShowSidebar] = useState(false)
   const [isDarkTheme, setISDarkTheme] = useState(isDarkThemeEnabled)
