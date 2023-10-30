@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             path: 'stats',
             element: <Stats />,
             errorElement: <ErrorElement />,
-            loader: statsLoader,
+            loader: statsLoader(queryClient),
           },
           {
             path: 'all-jobs',
